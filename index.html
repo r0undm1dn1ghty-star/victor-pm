@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Виктор Зайцев — AI-native Product Manager</title>
+<meta name="description" content="Продукт с нуля до денег: Discovery, Strategy, Delivery. Собственный SIaaS-продукт — внедрение ИИ-агентов для МСБ.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Виктор Зайцев — AI-native Product Manager">
+<meta property="og:description" content="Беру продукты с нуля или в хаосе — и довожу их до рынка. Свой SIaaS-продукт: 8+ внедрений ИИ-агентов в production.">
+<link rel="icon" href="https://framerusercontent.com/images/cMLDf5V5xkODmXlLBOCsshDQ8OE.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F1318; --text:#F5F7FA; --muted:#8B94A3; --accent:#7B9CFF;
+  --btn:#2563EB; --card:#151A21; --border:#232B35; --card-light:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-size:16px; line-height:1.55;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:64px 24px;display:grid;grid-template-columns:340px 1fr;gap:72px}
+@media(max-width:900px){.wrap{grid-template-columns:1fr;gap:48px;padding:40px 16px}}
+
+/* левая колонка */
+.profile{position:sticky;top:64px;align-self:start;text-align:center}
+@media(max-width:900px){.profile{position:static}}
+.avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;margin-bottom:20px}
+.name{font-size:30px;font-weight:700;letter-spacing:-0.02em}
+.role{font-size:17px;font-weight:600;color:var(--muted);margin:4px 0 18px}
+.bio{font-size:15.5px;color:var(--text);margin-bottom:18px}
+.geo{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid var(--border);border-radius:999px;font-size:13.5px;color:var(--muted);margin-bottom:26px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:28px 0 14px}
+.tg-btn{display:inline-flex;align-items:center;gap:10px;background:var(--btn);color:#fff;font-weight:700;font-size:15px;padding:11px 22px;border-radius:999px;text-decoration:none;margin-bottom:18px}
+.tg-btn svg{width:18px;height:18px;fill:#fff}
+.contact{display:flex;align-items:center;gap:10px;justify-content:center;font-size:14.5px;color:var(--muted);margin:10px 0;text-decoration:none}
+.contact:hover{color:var(--text)}
+.contact svg{width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:1.8;flex-shrink:0}
+
+/* правая колонка */
+.hero{font-size:21px;font-weight:700;line-height:1.45;margin-bottom:22px}
+.hero em{font-style:normal;color:var(--accent)}
+.lead{font-size:16.5px;color:var(--muted);margin-bottom:28px}
+.lead b{color:var(--text);font-weight:600}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:30px}
+.metric{background:var(--card-light);color:#0F1318;border-radius:16px;padding:16px 14px;text-align:center}
+.metric .v{font-size:21px;font-weight:700;color:var(--accent);margin-bottom:6px}
+.metric .l{font-size:11.5px;line-height:1.4;color:#5B6472}
+.metric.wide{grid-column:1/-1;display:flex;align-items:baseline;gap:14px;text-align:left;padding:16px 20px}
+.metric.wide .v{margin-bottom:0;font-size:22px;white-space:nowrap}
+.metric.wide .l{font-size:13px}
+.note{font-size:16.5px;color:var(--muted);margin-bottom:8px}
+.note b{color:var(--text);font-weight:600}
+.note a{color:var(--accent);text-decoration:none}
+.note a:hover{text-decoration:underline}
+
+/* кейсы */
+.case{display:block;background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;text-decoration:none;color:var(--text);margin-bottom:16px;transition:border-color .2s}
+.case:hover{border-color:var(--accent)}
+.case img{width:100%;height:auto;display:block}
+.case-strip{display:flex;align-items:center;gap:16px;padding:18px 22px;border-top:1px solid var(--border)}
+.case-strip .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.case-title{font-weight:700;font-size:16.5px;flex:1}
+.case-meta{font-size:12.5px;color:var(--muted);text-align:right;white-space:nowrap}
+.case-meta b{display:block;color:var(--text);font-weight:600}
+.case-preview{background:linear-gradient(0deg,#10141a,#10141a);padding:22px;display:flex;gap:26px;align-items:center;border-bottom:1px solid var(--border)}
+.case-preview .n{font-size:26px;font-weight:700;color:var(--accent)}
+.case-preview .t{font-size:13px;color:var(--muted)}
+
+/* рекомендации */
+.quote{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px 24px;margin-bottom:14px}
+.quote p{font-size:15px;color:var(--text);margin-bottom:14px}
+.qa{display:flex;align-items:center;gap:12px}
+.qa .in{width:38px;height:38px;border-radius:50%;background:var(--btn);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.qa .n{font-weight:600;font-size:14.5px}
+.qa .r{font-size:13px;color:var(--muted)}
+
+/* опыт */
+.job{margin-bottom:26px}
+.job h3{font-size:18px;font-weight:700}
+.sub{margin:14px 0 10px;padding-left:14px;border-left:2px solid var(--border)}
+.sub h4{font-size:15.5px;font-weight:600}
+.sub .m{font-size:13px;color:var(--muted);margin:2px 0 6px}
+.sub p{font-size:14.5px;color:var(--muted)}
+.sub p b{color:var(--text);font-weight:600}
+.co{font-size:14px;color:var(--muted);margin:2px 0 8px}
+.co b{color:var(--text);font-weight:600}
+.job>p{font-size:14.5px;color:var(--muted)}
+
+/* навыки */
+.skillgroup{margin-bottom:16px}
+.skillgroup h4{font-size:14px;font-weight:600;color:var(--muted);margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:6px 13px;border:1px solid var(--border);border-radius:999px;font-size:13.5px;color:var(--text)}
+
+/* образование */
+.edu{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--border);font-size:14.5px}
+.edu:last-of-type{border-bottom:none}
+.edu .y{color:var(--muted);white-space:nowrap;font-size:13.5px}
+
+/* связь внизу */
+.ctact{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.ctact a{display:block;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;text-decoration:none;color:var(--text)}
+.ctact a:hover{border-color:var(--accent)}
+.ctact .k{font-size:12px;color:var(--muted);margin-bottom:4px}
+.ctact .v{font-weight:600;font-size:14.5px}
+
+.footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ЛЕВАЯ КОЛОНКА -->
+  <aside class="profile">
+    <img class="avatar" src="https://framerusercontent.com/images/2yImIFU79xL0j8eU7gd6wCRNVM.jpg" alt="Виктор Зайцев">
+    <div class="name">Виктор Зайцев</div>
+    <div class="role">AI-native Product Manager</div>
+    <p class="bio">Нахожу, что строить и для кого через Discovery и AJTBD-сегментацию ЦА. Собираю и валидирую продукты c Claude Code. Английский — С1.</p>
+    <div class="geo">🇷🇺 Россия, Санкт-Петербург — Remote</div>
+
+    <div class="eyebrow">Связь</div>
+    <a class="tg-btn" href="https://t.me/soulvictor" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M9.04 15.51 8.9 19a.6.6 0 0 0 .96.5l2.2-1.68 3.9 2.87c.57.42 1.38.12 1.55-.58l2.6-11.02c.18-.78-.4-1.4-1.15-1.25L4.4 10.66c-.8.17-.87 1.3-.1 1.56l3.55 1.18 8.03-4.98c.36-.22.72.28.4.55l-7.24 6.54z"/></svg>
+      @soulvictor
+    </a>
+    <a class="contact" href="mailto:viktor.garnett@yandex.ru">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      viktor.garnett@yandex.ru
+    </a>
+    <a class="contact" href="https://www.linkedin.com/in/victor-zaitsev-product/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5m0 2.5c0-1.5 1-2.5 2.5-2.5S16 12 16 13.5V16"/></svg>
+      victor-zaitsev-product
+    </a>
+  </aside>
+
+  <!-- ПРАВАЯ КОЛОНКА -->
+  <main>
+    <p class="hero">Беру продукты <em>с нуля или в хаосе</em> — и довожу их до рынка. Помогаю фаундерам не строить то, что никто не купит.</p>
+    <p class="lead">За последние 3 года работы <b>дважды выстроил Discovery-процесс</b> в IT-компаниях с нуля и запустил 2 новых продукта в B2B SaaS (HR-Tech) и Media. Сейчас веду <b>собственный SIaaS-продукт</b> — внедрение ИИ-агентов в процессы малого и среднего бизнеса.</p>
+
+    <div class="metrics">
+      <div class="metric"><div class="v">20 → 80%</div><div class="l">Точность AI-скоринга кандидатов, +60 п.п</div></div>
+      <div class="metric"><div class="v">×1.8</div><div class="l">Time-to-Market через JTBD-сегментацию ТЗ</div></div>
+      <div class="metric"><div class="v">+16%</div><div class="l">Revenue бренда после A/B-тестов</div></div>
+      <div class="metric"><div class="v">~97%</div><div class="l">CSAT пользователей игры-теста (n=~2k)</div></div>
+      <div class="metric wide"><div class="v">1–4,3 млрд ₽</div><div class="l">в год — моя оценка потерь рынка РФ от блокировок ИИ-аккаунтов (Monte Carlo, код открыт)</div></div>
+    </div>
+
+    <p class="note">Построил <b>четыре собственных исследования рынка</b> с открытым методом, включая первую в РФ оценку потерь от блокировок ИИ-аккаунтов — <a href="https://discovery-system.ru/lost-accounts.html" target="_blank" rel="noopener">discovery-system.ru</a>. Ищу команду, где буду строить продукт с нуля до денег и выводить ИИ в production.</p>
+
+    <div class="eyebrow">Кейсы</div>
+
+    <a class="case" href="https://discovery-system.ru" target="_blank" rel="noopener">
+      <div class="case-preview"><span class="n">8+</span><span class="t">внедрений ИИ-агентов в production · первая сделка 17 000 ₽ без рекламного бюджета</span></div>
+      <div class="case-strip"><span class="dot"></span><span class="case-title">SIaaS-продукт с нуля: от первой сделки до 8+ внедрений</span><span class="case-meta">октябрь 2026 г.<b>Founding AI Product Manager</b></span></div>
+    </a>
+    <a class="case" href="#" onclick="return false">
+      <img src="https://framerusercontent.com/images/mmyHKBj3kMqDR2Djem2dz6QaEoA.png" alt="" loading="lazy">
+      <div class="case-strip"><span class="dot"></span><span class="case-title">Рост точности AI-cкоринга на 60 п.п.</span><span class="case-meta">июнь 2026 г.<b>Head of Product</b></span></div>
+    </a>
+    <a class="case" href="#" onclick="return false">
+      <img src="https://framerusercontent.com/images/HvQvbE0lEUWIF1vXSV9VHroFcuE.png" alt="" loading="lazy">
+      <div class="case-strip"><span class="dot"></span><span class="case-title">Discovery-система от JTBD — Time-to-Market ×1.8</span><span class="case-meta">июнь 2025 г.<b>Discovery Product Manager</b></span></div>
+    </a>
+    <a class="case" href="#" onclick="return false">
+      <img src="https://framerusercontent.com/images/UpjF79VnECBrD63wf8HEVYDOPU.png" alt="" loading="lazy">
+      <div class="case-strip"><span class="dot"></span><span class="case-title">Стратегия оптимизации медиа-бренда на этапе спада</span><span class="case-meta">май 2025 г.<b>Product Researcher</b></span></div>
+    </a>
+    <a class="case" href="#" onclick="return false">
+      <img src="https://framerusercontent.com/images/IJtNfauZjVjfLNo8Hm3t2k5n8.jpg" alt="" loading="lazy">
+      <div class="case-strip"><span class="dot"></span><span class="case-title">Новый продукт за 3 месяца — +16% к выручке бренда</span><span class="case-meta">май 2024 г.<b>Product Owner</b></span></div>
+    </a>
+
+    <div class="eyebrow">Рекомендации</div>
+    <div class="quote">
+      <p>«Взвешенно принимаешь решения и держишь слово как партнёр — я доверяю твоей продуктовой логике. Ты проявляешь инициативу там, где её изначально не ждут.»</p>
+      <div class="qa"><div class="in">АП</div><div><div class="n">Артур Прусаков</div><div class="r">Founder/CEO в WorkWay</div></div></div>
+    </div>
+    <div class="quote">
+      <p>«Глубоко погружаешься в продукт и возвращаешься с неожиданными инсайтами. Быстро вливаешься в новое и схватываешь всё на лету.»</p>
+      <div class="qa"><div class="in">КП</div><div><div class="n">Кирилл Поветьев</div><div class="r">Head of Product в Сhill Music Lab (NewGen Vision)</div></div></div>
+    </div>
+    <div class="quote">
+      <p>«Прошлась по твоим советам, обозначила аудиторию, переписала формулировки на сайте — аж разревелась, потому что до этого всё было размазано, а теперь цепляет. Это было именно то, чего не хватало.»</p>
+      <div class="qa"><div class="in">АК</div><div><div class="n">Альбина Карташова</div><div class="r">Product Manager в Палитра Здоровья</div></div></div>
+    </div>
+
+    <div class="eyebrow">Опыт работы&nbsp;&nbsp;|&nbsp;&nbsp;~3,5 года</div>
+
+    <div class="job">
+      <h3>Founding AI Product Manager</h3>
+      <div class="co"><b>Discovery System</b> · СПб / Remote</div>
+      <div class="sub">
+        <h4>07/2026 — настоящее время (5 м.) · собственный SIaaS-продукт</h4>
+        <p>Веду продукт один: <b>внедрение ИИ-агентов в процессы малого и среднего бизнеса</b> — от замера рынка и цены до сборки, продажи и приёмки на задачах клиента.</p>
+      </div>
+      <div class="sub">
+        <h4>Ключевое</h4>
+        <p>От первой сделки до <b>портфеля больше восьми внедрений в production за 4 месяца</b> (первая сделка 17 000 ₽ с Авито без рекламного бюджета, клиент вернулся за следующими продуктами). Линейка 13 продуктов на разборе ~100 конкурентов, цена по TCO: вход 15 000 ₽ против 49 000 ₽ у интеграторов. Автовыдача продаёт без моего участия. Построил и опубликовал <b>первую в РФ оценку потерь рынка от блокировок ИИ-аккаунтов</b>: 86 тыс. платящих, 1–4,3 млрд ₽/год — OSINT, Monte Carlo 200 тыс. сценариев, рецензирование 5 ИИ-экспертами. Собрал лидген с замером: парсер по 57 каналам, точность 63% против 47% у наивного поиска.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <h3>Head of Product</h3>
+      <div class="co"><b>WorkWay</b> · Remote</div>
+      <div class="sub">
+        <h4>04/2026 — 06/2026 (3 м.)</h4>
+        <p>Запустил разработку AI-HRM-платформы на основе Discovery (лидируя Fullstack + Junior PM). Улучшил точность AI-cкоринга на 60 п.п. (с 20% до 80%), ускорив Time-to-Hire кандидатов.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <h3>Product &amp; Growth Consultant</h3>
+      <div class="co"><b>восприятие</b> · Remote</div>
+      <div class="sub">
+        <h4>09/2025 — 04/2026 (8 м.)</h4>
+        <p>Разработал 3 стратегии роста и оптимизации бизнеса. Проконсультировал 4 бренда (в нишах Wellness, Mental Health, Media): внедрил сегментации ЦА, маркетинг-миксы и реферальные механики.</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <h3>Бизнес-ассистент СЕО — Discovery Product Manager</h3>
+      <div class="co"><b>NewGen Vision (CML)</b> · СПб</div>
+      <div class="sub">
+        <h4>01/2024 — 08/2025 (1 г. 8 м.)</h4>
+        <p><b>Построил продуктовую функцию компании с нуля</b>, синхронизировал С-level, продукт, маркетинг и дизайн.</p>
+      </div>
+      <div class="sub">
+        <h4>Discovery Product Manager · 07/2025 — 08/2025 (2 м.)</h4>
+        <p>Организовал Discovery-процесс — внедрил JTBD-ТЗ и контент-планы (T2M ×1.8, Revenue на ед. контента ×1.2). Создал систему проверки гипотез — валидировал 2 MVP до разработки.</p>
+      </div>
+      <div class="sub">
+        <h4>Product Researcher · 07/2024 — 07/2025 (1 г.)</h4>
+        <p>Определил стратегический фундамент бренда: сегментацию ЦА, бренд-платформу и бизнес-модель. Сопровождал запуски новых форматов, уточнял бизнес-ценность и продуктовую логику релизов.</p>
+      </div>
+      <div class="sub">
+        <h4>Product Owner · 02/2024 — 07/2024 (6 м.)</h4>
+        <p>Запустил новую игру-сервис для A/B-тестирований (CR ~50%, CSAT ~97%) с командой из 11 человек. Результаты теста увеличили Revenue бренда на +16%.</p>
+      </div>
+      <div class="sub">
+        <h4>Бизнес-ассистент СЕО · 01/2024 — 06/2025 (1 г. 7 м.)</h4>
+        <p>Сопровождал CEO в стратегических и продуктовых решениях (исследования, встречи, презентации, риск-менеджмент). Нанял двух первых PM компании по своей системе найма и оценки.</p>
+      </div>
+    </div>
+
+    <div class="eyebrow">Ключевые навыки</div>
+    <div class="skillgroup"><h4>ИИ и автоматизация</h4>
+      <div class="chips"><span class="chip">Внедрение ИИ</span><span class="chip">ИИ-агенты</span><span class="chip">LLM</span><span class="chip">Автоматизация бизнес-процессов</span><span class="chip">Промпт-инжиниринг</span><span class="chip">FastAPI</span><span class="chip">Python</span></div>
+    </div>
+    <div class="skillgroup"><h4>Стратегия и принятие решений</h4>
+      <div class="chips"><span class="chip">Стратегия и принятие решений</span><span class="chip">Бизнес-моделирование</span><span class="chip">Видение продукта</span><span class="chip">OKR</span><span class="chip">Юнит-экономика</span><span class="chip">Сегментация ЦА (ICP, ABCDX)</span><span class="chip">УЦП</span><span class="chip">Управление рисками (RAT)</span><span class="chip">Маркетинговый микс</span></div>
+    </div>
+    <div class="skillgroup"><h4>Discovery &amp; Research</h4>
+      <div class="chips"><span class="chip">Анализ рынка</span><span class="chip">CustDev</span><span class="chip">Анализ конкурентов</span><span class="chip">AJTBD</span><span class="chip">CJM</span><span class="chip">Service Blueprint</span><span class="chip">UX-тесты</span><span class="chip">Опросы</span></div>
+    </div>
+    <div class="skillgroup"><h4>Аналитика и развитие продукта</h4>
+      <div class="chips"><span class="chip">Продуктовые метрики (AARRR)</span><span class="chip">Проверка гипотез</span><span class="chip">Приоритизация по ICE/RICE</span><span class="chip">A/B-тесты</span></div>
+    </div>
+    <div class="skillgroup"><h4>Запуск продуктов и Delivery</h4>
+      <div class="chips"><span class="chip">MVP 0→1</span><span class="chip">PRD</span><span class="chip">User Flow</span><span class="chip">RoadMap</span><span class="chip">Go-to-Market</span><span class="chip">ScrumBan</span><span class="chip">Бэклог</span><span class="chip">Спринты</span><span class="chip">Управление командой</span></div>
+    </div>
+    <div class="skillgroup"><h4>Рабочие инструменты</h4>
+      <div class="chips"><span class="chip">Notion</span><span class="chip">Claude Code</span><span class="chip">GitHub</span><span class="chip">Figma</span><span class="chip">Miro</span><span class="chip">Google Sheets</span></div>
+    </div>
+
+    <div class="eyebrow">Образование и проекты</div>
+    <div class="edu"><span>Вайбкодинг с Claude — Алексей Крол</span><span class="y">2026</span></div>
+    <div class="edu"><span>Проектирование клиентского опыта — Skillbox</span><span class="y">2025</span></div>
+    <div class="edu"><span>Product Manager (кейс-чемпионат) — VK × ВШЭ</span><span class="y">2024</span></div>
+    <div class="edu"><span>Управление продуктами и проектами в конкурентной бизнес-среде (магистратура) — СПбПУ Политех</span><span class="y">2023–2025</span></div>
+    <div class="edu"><span>Руководитель проекта (стажировка) — ВТБ × СПбПУ Политех</span><span class="y">2021–2022</span></div>
+
+    <div class="eyebrow">Связь</div>
+    <div class="ctact">
+      <a href="https://t.me/soulvictor" target="_blank" rel="noopener"><div class="k">Telegram</div><div class="v">@soulvictor</div></a>
+      <a href="mailto:viktor.garnett@yandex.ru"><div class="k">Email</div><div class="v">viktor.garnett@yandex.ru</div></a>
+      <a href="https://www.linkedin.com/in/victor-zaitsev-product/" target="_blank" rel="noopener"><div class="k">LinkedIn</div><div class="v">/victor-zaitsev-product</div></a>
+      <a href="https://discovery-system.ru" target="_blank" rel="noopener"><div class="k">Свой продукт</div><div class="v">discovery-system.ru</div></a>
+    </div>
+
+    <div class="footer">
+      <span>© 2026 Виктор Зайцев</span>
+      <span>Статика на GitHub Pages · собрал с Claude Code</span>
+    </div>
+  </main>
+</div>
+</body>
+</html>
