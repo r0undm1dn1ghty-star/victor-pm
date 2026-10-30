@@ -1121,23 +1121,21 @@ window.hairline = function (fig) { window.__desk = fig; };
 (function () {
 /**
  * Desk: a workbench and the man at it. Four things stand on the top — a
- * monitor, a notebook with its pen, a stack of books, a phone. The one under
- * the pointer lifts and takes the bright stroke, and he turns his head towards
- * it; the read-out names it. A press reports which thing was chosen, so a host
+ * monitor, a notebook with its pen, a stack of books, a phone. The thing under
+ * the pointer lifts and takes the bright stroke; he turns his head towards it
+ * and the read-out names it. A press reports which thing was chosen, so a host
  * page can send the reader to that chapter.
  *
- * The pattern: discrete items standing at different heights. Tweens, a stagger
- * by distance, identity carried by geometry, and a hit test against each
- * part's RESTING middle, so a part lifting out from under the pointer cannot
- * flip the choice.
+ * The pattern: discrete items at different heights. Tweens, a stagger by
+ * distance, identity carried by geometry, and a hit test against each part's
+ * RESTING middle, so a part lifting out from under the pointer cannot flip it.
  */
 const {
   Cam, clamp, facing, fit, hull, open, poly, proj, ringAt, rings, run, seg,
   tdone, tset, tval, tween, disposer, mk, pointer, prism, register,
 } = HL;
 
-const TOP = 46, LIFT0 = 9;
-const BOOKS = [[40, -26, 64, -14], [41.6, -23.4, 62.6, -12.4], [43.2, -20.8, 61.2, -10.8], [44.8, -18.2, 59.8, -9.2]];
+const TOP = 46, BOOKS = [[40, -26, 64, -14], [41.6, -23.4, 62.6, -12.4], [43.2, -20.8, 61.2, -10.8], [44.8, -18.2, 59.8, -9.2]];
 
 /** A rounded solid from a footprint and a height band, lifted by l. */
 const slab = (P, front, [x0, y0, x1, y1], r, b, z0, z1, l) => {
@@ -1194,7 +1192,6 @@ const arms = (P, front) => pathsOf([
   slab(P, front, [-19.5, -34, -12.5, -26], 2.6, 1.2, TOP, 49.4),  // left hand
   slab(P, front, [12.5, -34, 19.5, -26], 2.6, 1.2, TOP, 49.4),    // right hand
 ]);
-
 /* — the four things, painted far to near by x + y — */
 const THINGS = [
   {
@@ -1224,14 +1221,14 @@ const THINGS = [
     draw: (P, front, l) => pathsOf(BOOKS.map((b, i) => slab(P, front, b, 1.4, 0.8, TOP + i * 4.2, TOP + (i + 1) * 4.2 - 0.9, l))),
   },
 ];
-
 function mount({ stage, svg, read, onPick }, value) {
   const bag = disposer();
   const g = mk("g", {}, svg);
 
-  const C = Cam(45, 0.5, 1.72);
+  const C = Cam(45, 0.5, 1.5);
   fit(C, [[-70, -34, 0], [70, 26, 0], [-70, 26, 0], [70, -34, 0], [-70, -61, 74],
-    [-70, -34, TOP + 4 * 4.2 + 18], [7.8, -53.6, 92.5 + LIFT0], [-7.8, -53.6, 92.5 + LIFT0]], 200, 166);
+    [-70, -34, TOP + 4 * 4.2], [40, -26, TOP + 4 * 4.2 + 48], [-42, -2.8, 78 + 48],
+    [7.8, -53.6, 92.5], [-7.8, -53.6, 92.5]], 200, 166);
   const P = proj(C), front = facing(C);
 
   const put = (paths) => paths.map((p) => mk("path", { d: p.d, class: p.cls }, g));
@@ -1289,10 +1286,10 @@ function mount({ stage, svg, read, onPick }, value) {
     act = a;
     const now = performance.now();
     THINGS.forEach((t, i) => {
-      tset(lifts[i], a === i ? far : 0, now, Math.abs(i - a) * 45);
+      tset(lifts[i], a === i ? far : a < 0 ? 0 : -10, now, Math.abs(i - a) * 45);
       parts[i].els.forEach((el, k) => el.classList.toggle("hi", a === i && k < parts[i].n));
     });
-    tset(turn, a < 0 ? 0 : clamp(THINGS[a].cx / 15, -3.4, 3.4), now, 0);
+    tset(turn, a < 0 ? 0 : clamp(THINGS[a].cx / 10, -5, 5), now, 0);
     if (a < 0) parts[1].els.slice(0, parts[1].n).forEach((el) => el.classList.add("hi"));
     read.textContent = a < 0 ? "rest" : THINGS[a].name;
     B.wake();
@@ -1318,7 +1315,7 @@ hairline({
   name: "desk",
   means: "A workbench and the man at it: the thing under the pointer lifts and takes the bright stroke, and he turns his head to it.",
   rules: [1, 2, 4, 5, 9, 10],
-  range: [0, 9, 18],
+  range: [0, 34, 48],
   tour: [[122, 188], [196, 132], [266, 172], [316, 148], null],
   mount,
 });
