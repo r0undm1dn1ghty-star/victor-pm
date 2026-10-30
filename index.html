@@ -4,272 +4,388 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Виктор Зайцев — Head of Product · AI</title>
-<meta name="description" content="Трижды выстроил Discovery-процесс с нуля и запустил три продукта 0→1. Сейчас веду сервис внедрения ИИ-агентов в бизнес-процессы МСБ.">
+<meta name="description" content="Трижды выстроил Discovery-процесс с нуля и запустил три продукта 0→1. Веду сервис внедрения ИИ-агентов в бизнес-процессы МСБ: 8 платных внедрений за 4 месяца.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Виктор Зайцев — Head of Product · AI">
-<meta property="og:description" content="8 платных внедрений ИИ-агентов за 4 месяца. Продукт, цена, продажи, команда — на мне.">
+<meta property="og:description" content="8 платных внедрений ИИ-агентов за 4 месяца. Стратегия, продукт, цена, продажи, команда — на мне.">
 <link rel="icon" href="https://framerusercontent.com/images/cMLDf5V5xkODmXlLBOCsshDQ8OE.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* токены взяты из discovery-system-repo/index.html (:root) — бренд Discovery */
+/* Токены сняты из живого discovery-system-repo/index.html (:root) */
 :root{
-  --bg:#111524; --ink:#eef2f9; --body:#b8c3d6; --meta:#8893a8; --faint:#7a85a0;
-  --line:rgba(255,255,255,.12); --line-soft:rgba(255,255,255,.07);
-  --accent:#7bc4a8; --accent-rgb:123,196,168;
-  --card:#161c30; --deep:#0d1120;
-  --btn:#1f7a4d; --btn-h:#26895b; --btn-text:#f2fbf5;
-  --mono:'IBM Plex Mono',ui-monospace,monospace;
-  --sans:'IBM Plex Sans',system-ui,sans-serif;
-  --display:'Onest',var(--sans);
+  --bg:#111524; --lift:#141a2b; --card:#161c30; --deep:#0d1120;
+  --ink:#eef2f9; --body:#b8c3d6; --meta:#8893a8; --faint:#5a6275;
+  --line:rgba(255,255,255,.12); --line-soft:rgba(255,255,255,.06);
+  --accent:#7bc4a8; --accent-15:rgba(123,196,168,.15); --accent-40:rgba(123,196,168,.4);
+  --btn:#1f7a4d; --btn-hover:#25885a; --btn-ink:#f1fbf5;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+  --disp:'Onest',var(--sans);
   --ease:cubic-bezier(.22,1,.36,1);
-  --r-card:14px; --r-sm:10px;
+  --r:14px; --r-s:10px;
+  --pad:clamp(20px,4vw,32px);
+  --maxw:1140px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scrollbar-color:#2a3149 var(--bg)}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.62}
-a{color:inherit}
-.wrap{max-width:1080px;margin:0 auto;padding:0 28px 88px}
-section{padding:84px 0 0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scrollbar-color:#2b3350 var(--bg)}
+body{background:var(--bg);color:var(--body);font:400 16.5px/1.68 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{color:var(--ink);font-family:var(--disp);font-weight:500;letter-spacing:-.025em;line-height:1.08}
+h1{font-size:clamp(34px,5.1vw,66px);letter-spacing:-.035em;line-height:1.04;text-wrap:balance}
+h2{font-size:clamp(23px,2.9vw,36px);text-wrap:balance}
+h3{font-size:clamp(18px,1.6vw,21px);font-weight:600;letter-spacing:-.015em;line-height:1.25}
+p{text-wrap:pretty}
+strong,b{color:var(--ink);font-weight:600}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--meta);font-weight:500}
+
+/* свет: три больших пятна за контентом, 4% белого — материал, не декор */
+.light{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.light i{position:absolute;display:block;border-radius:50%;filter:blur(110px);opacity:.5}
+.light .l1{width:760px;height:560px;left:-180px;top:-160px;background:radial-gradient(circle,rgba(123,196,168,.16),rgba(123,196,168,0) 68%)}
+.light .l2{width:640px;height:520px;right:-160px;top:420px;background:radial-gradient(circle,rgba(120,150,255,.10),rgba(120,150,255,0) 70%)}
+.light .l3{width:900px;height:600px;left:20%;top:1500px;background:radial-gradient(circle,rgba(123,196,168,.09),rgba(123,196,168,0) 72%)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad) 96px}
 
 /* nav */
-nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 0 0;font-size:14.5px}
-nav .lg{font-family:var(--display);font-weight:600;font-size:15.5px;letter-spacing:-.01em}
-nav .links{display:flex;gap:24px;flex-wrap:wrap}
-nav a{color:var(--body);text-decoration:none;transition:color .2s var(--ease)}
-nav a:hover{color:var(--accent)}
+header{position:sticky;top:0;z-index:20;background:rgba(17,21,36,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.nav{max-width:var(--maxw);margin:0 auto;padding:16px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:var(--disp);font-weight:600;font-size:15.5px;color:var(--ink);letter-spacing:-.015em}
+.brand span{color:var(--accent)}
+.nav nav{display:flex;gap:26px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em}
+.nav a{color:var(--meta);transition:color .25s var(--ease)}
+.nav a:hover{color:var(--ink)}
 
 /* hero */
-.hero{padding-top:76px;max-width:760px}
-.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--meta);margin-bottom:22px}
-h1{font-family:var(--display);font-weight:700;font-size:clamp(30px,4.2vw,50px);line-height:1.12;letter-spacing:-.02em;margin-bottom:22px;text-wrap:balance}
-h1 em{font-style:normal;color:var(--accent)}
-.lead{font-size:17.5px;color:var(--body);max-width:660px;margin-bottom:30px}
-.lead b{color:var(--ink);font-weight:600}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:var(--r-sm);font-size:15px;font-weight:600;text-decoration:none;transition:transform .18s var(--ease),background .2s var(--ease),border-color .2s var(--ease)}
-.btn:active{transform:scale(.97)}
-.btn-p{background:var(--btn);color:var(--btn-text)}
-.btn-p:hover{background:var(--btn-h)}
-.btn-s{border:1px solid var(--line);color:var(--ink)}
-.btn-s:hover{border-color:var(--accent);color:var(--accent)}
+.hero{padding:clamp(56px,9vw,112px) 0 0;max-width:900px}
+.kicker{display:flex;align-items:center;gap:14px;margin-bottom:30px;flex-wrap:wrap}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-15)}
+.hero h1{margin-bottom:28px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(17px,1.5vw,19px);line-height:1.6;max-width:62ch;margin-bottom:36px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:var(--r-s);font-size:15px;font-weight:500;
+  font-family:var(--sans);transition:background .22s var(--ease),border-color .22s var(--ease),color .22s var(--ease),transform .16s var(--ease)}
+.btn:active{transform:scale(.975)}
+.btn--p{background:var(--btn);color:var(--btn-ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 1px 2px rgba(0,0,0,.3)}
+.btn--p:hover{background:var(--btn-hover)}
+.btn--g{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.015)}
+.btn--g:hover{border-color:var(--accent-40);color:var(--accent)}
+.btn--g svg{opacity:.55}
 
-/* метрики */
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:72px;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;background:var(--deep)}
-.metric{padding:24px 22px;border-right:1px solid var(--line-soft)}
-.metric:last-child{border-right:none}
-.metric .v{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.8vw,32px);letter-spacing:-.02em;color:var(--accent);margin-bottom:8px;font-variant-numeric:tabular-nums}
-.metric .l{font-size:13.5px;color:var(--body);line-height:1.5}
+/* полоса доказательств */
+.proof{margin-top:clamp(60px,8vw,92px);display:grid;grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,0) 62%),var(--deep);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.09);overflow:hidden}
+.proof div{padding:26px 24px;border-right:1px solid var(--line-soft)}
+.proof div:last-child{border-right:0}
+.proof .n{font-family:var(--disp);font-weight:500;font-size:clamp(27px,3.1vw,40px);letter-spacing:-.03em;color:var(--ink);
+  font-variant-numeric:tabular-nums;line-height:1;margin-bottom:12px}
+.proof .n em{font-style:normal;color:var(--accent)}
+.proof .d{font-size:13.5px;line-height:1.5;color:var(--body)}
 
-h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.5vw,30px);letter-spacing:-.015em;margin-bottom:32px}
+/* секции */
+section{padding-top:clamp(72px,9vw,124px)}
+.shead{display:grid;grid-template-columns:52px 1fr;gap:0 12px;align-items:baseline;margin-bottom:38px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.shead .idx{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.1em}
+.shead h2{grid-column:2}
 
-/* исследования */
-.research{border:1px solid var(--line);border-radius:var(--r-card);background:var(--card);padding:32px 34px}
-.research .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
-.research .n{font-family:var(--display);font-weight:600;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;line-height:1.1;margin-bottom:12px}
-.research p{font-size:15px;color:var(--body);max-width:700px}
-.research p b{color:var(--ink);font-weight:600}
-.research a{color:var(--accent);text-decoration:none}
-.research a:hover{text-decoration:underline}
+/* исследования — крупное число как аргумент */
+.research{border:1px solid var(--line);border-radius:var(--r);padding:clamp(28px,3.4vw,44px);
+  background:linear-gradient(180deg,rgba(123,196,168,.055),rgba(255,255,255,0) 58%),var(--card);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.research .num{font-family:var(--disp);font-weight:500;font-size:clamp(32px,4.6vw,58px);letter-spacing:-.035em;color:var(--ink);
+  line-height:1.02;margin:16px 0 18px;font-variant-numeric:tabular-nums}
+.research .num span{color:var(--accent)}
+.research p{max-width:70ch;font-size:15.5px}
+.research .method{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;padding-top:20px;border-top:1px solid var(--line-soft)}
+.research .method div{font-family:var(--mono);font-size:12.5px;color:var(--meta);letter-spacing:.04em}
+.research .method b{color:var(--ink);font-weight:500}
+.research a{color:var(--accent);border-bottom:1px solid var(--accent-40)}
 
-/* опыт */
-.job{padding:34px 0;border-top:1px solid var(--line)}
+/* опыт — редакционная ведомость с липкой левой колонкой */
+.job{display:grid;grid-template-columns:minmax(200px,248px) 1fr;gap:0 clamp(24px,4vw,64px);
+  padding:40px 0;border-top:1px solid var(--line)}
 .job:first-of-type{border-top:1px solid var(--line)}
-.job .head{display:flex;justify-content:space-between;gap:18px;align-items:baseline;flex-wrap:wrap;margin-bottom:3px}
-.job h3{font-family:var(--display);font-weight:600;font-size:19.5px;letter-spacing:-.01em}
-.job .dates{font-family:var(--mono);font-size:12.5px;color:var(--meta);white-space:nowrap}
-.job .co{font-size:14px;color:var(--meta);margin-bottom:18px}
-.job ul{list-style:none;display:grid;gap:12px;max-width:800px}
-.job li{position:relative;padding-left:18px;font-size:15.5px;color:var(--body)}
-.job li b{color:var(--ink);font-weight:600}
-.job li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--accent);border-radius:2px;opacity:.85}
+.job .side{position:sticky;top:86px;align-self:start}
+.job .idx{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.1em;margin-bottom:14px}
+.job .dates{font-family:var(--mono);font-size:12.5px;color:var(--meta);letter-spacing:.03em;margin-top:8px}
+.job .co{font-size:14px;color:var(--meta);margin-top:14px;line-height:1.5}
+.job .co b{color:var(--body);font-weight:500}
+.job ul{list-style:none;display:grid;gap:14px;max-width:74ch}
+.job li{padding-left:20px;position:relative;font-size:15.5px}
+.job li::before{content:"";position:absolute;left:0;top:11px;width:7px;height:1px;background:var(--accent);opacity:.7}
+.job li b{color:var(--ink)}
 
-/* цитаты */
-.quotes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.quote{border:1px solid var(--line);border-radius:var(--r-card);padding:24px 26px;background:var(--card)}
-.quote p{font-size:14.5px;color:var(--ink);margin-bottom:16px}
-.qa .n{font-weight:600;font-size:14px}
-.qa .r{font-family:var(--mono);font-size:12px;color:var(--meta);display:block;margin-top:3px}
+/* рекомендации */
+.quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.q{background:var(--bg);padding:clamp(24px,2.6vw,34px);display:flex;flex-direction:column;gap:20px}
+.q blockquote{color:var(--ink);font-size:15.5px;line-height:1.62;max-width:46ch}
+.q blockquote::before{content:"«";color:var(--accent);margin-right:1px}
+.q blockquote::after{content:"»";color:var(--accent);margin-left:1px}
+.q .who{margin-top:auto;padding-top:18px;border-top:1px solid var(--line-soft)}
+.q .who b{display:block;font-size:14.5px;color:var(--ink);font-weight:500}
+.q .who span{font-family:var(--mono);font-size:12px;color:var(--meta);letter-spacing:.04em}
 
-/* навыки */
-.chips{display:flex;flex-wrap:wrap;gap:9px}
-.chip{padding:7px 15px;border:1px solid var(--line);border-radius:var(--r-sm);font-size:13.5px;color:var(--body)}
-.chip.hot{color:var(--accent);border-color:rgba(var(--accent-rgb),.4)}
+/* навыки — строки, не чипсы */
+.skills{border-top:1px solid var(--line)}
+.skrow{display:grid;grid-template-columns:minmax(150px,200px) 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line-soft)}
+.skrow .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--meta);padding-top:3px}
+.skrow .v{font-size:15.5px;color:var(--body)}
+.skrow .v b{color:var(--ink);font-weight:500}
 
-/* строки (образование, Ищу) */
-.row{display:grid;grid-template-columns:1fr auto;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-size:15px;color:var(--body)}
-.row b{color:var(--ink);font-weight:600}
-.row .y{font-family:var(--mono);font-size:12.5px;color:var(--meta);white-space:nowrap}
+/* строки */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr auto;gap:6px 24px;padding:17px 0;border-bottom:1px solid var(--line-soft);font-size:15.5px;align-items:baseline}
+.row .k{color:var(--body)}
+.row .k b{color:var(--ink);font-weight:500}
+.row .v{font-family:var(--mono);font-size:12.5px;color:var(--meta);letter-spacing:.04em;white-space:nowrap;font-variant-numeric:tabular-nums}
 
-/* связь */
-.links-row{display:flex;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:13.5px;margin-top:22px}
-.links-row a{color:var(--body);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .2s var(--ease),border-color .2s var(--ease)}
-.links-row a:hover{color:var(--accent);border-color:var(--accent)}
+/* контакты */
+.contact{border:1px solid var(--line);border-radius:var(--r);padding:clamp(30px,3.6vw,48px);
+  background:linear-gradient(180deg,rgba(123,196,168,.06),rgba(255,255,255,0) 60%),var(--card);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.contact h2{margin-bottom:14px}
+.contact p{max-width:56ch;margin-bottom:30px}
+.links{display:flex;gap:28px;flex-wrap:wrap;margin-top:26px;padding-top:22px;border-top:1px solid var(--line-soft);
+  font-family:var(--mono);font-size:13px;letter-spacing:.04em}
+.links a{color:var(--body);border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .22s var(--ease),border-color .22s var(--ease)}
+.links a:hover{color:var(--accent);border-color:var(--accent-40)}
 
-footer{margin-top:88px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;font-family:var(--mono);font-size:12px;color:var(--faint);flex-wrap:wrap}
+footer{margin-top:clamp(64px,8vw,104px);padding-top:20px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.05em}
 
-@media (prefers-reduced-motion: no-preference){
-  .in{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-  .in.on{opacity:1;transform:none}
+/* вход: контент виден по умолчанию, движение только под html.anim */
+html.anim .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+html.anim .reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.anim .reveal{opacity:1;transform:none;transition:none}
+  .btn:active{transform:none}
 }
-@media(max-width:860px){
-  .wrap{padding:0 18px 64px}
-  .metrics{grid-template-columns:repeat(2,1fr)}
-  .metric{border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
-  .metric:nth-child(2n){border-right:none}
+@media (max-width:900px){
+  .proof{grid-template-columns:repeat(2,1fr)}
+  .proof div{border-bottom:1px solid var(--line-soft)}
+  .proof div:nth-child(2n){border-right:0}
   .quotes{grid-template-columns:1fr}
-  section{padding:64px 0 0}
-  nav .links{gap:16px}
+  .job{grid-template-columns:1fr;gap:20px}
+  .job .side{position:static}
+  .skrow{grid-template-columns:1fr;gap:8px}
+  .shead{grid-template-columns:1fr;gap:8px}
+  .shead h2{grid-column:1}
+}
+@media (max-width:560px){
+  .nav nav{display:none}
+  body{font-size:16px}
 }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <nav>
-    <span class="lg">Виктор Зайцев</span>
-    <span class="links">
+<div class="light" aria-hidden="true"><i class="l1"></i><i class="l2"></i><i class="l3"></i></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top">Виктор Зайцев<span>.</span></a>
+    <nav>
+      <a href="#proof">Цифры</a>
       <a href="#research">Исследования</a>
       <a href="#experience">Опыт</a>
+      <a href="#skills">Навыки</a>
       <a href="#hire">Ищу</a>
-      <a href="#contact">Связь</a>
-    </span>
-  </nav>
+    </nav>
+  </div>
+</header>
 
-  <section class="hero">
-    <div class="eyebrow">Head of Product · AI · Санкт-Петербург, Remote · английский C1</div>
-    <h1>Беру продукты с нуля или в хаосе и довожу <em>до&nbsp;рынка</em>.</h1>
-    <p class="lead">Трижды выстроил Discovery-процесс с нуля и запустил <b>три продукта 0→1</b> в B2B SaaS (HR-Tech) и медиа. Сейчас веду сервис внедрения ИИ-агентов в бизнес-процессы МСБ. <b>Ищу найм.</b></p>
-    <div class="cta">
-      <a class="btn btn-p" href="#experience">Смотреть опыт</a>
-      <a class="btn btn-s" href="https://t.me/soulvictor" target="_blank" rel="noopener">Telegram</a>
+<main class="wrap" id="top">
+  <div class="hero">
+    <div class="kicker">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="mono">Head of Product · AI · Санкт-Петербург / Remote · английский C1</span>
     </div>
-  </section>
-
-  <div class="metrics in">
-    <div class="metric"><div class="v">×1.8</div><div class="l">быстрее выход контента после внедрения JTBD-ТЗ, внутренний замер</div></div>
-    <div class="metric"><div class="v">+16%</div><div class="l">к годовой выручке медиа-бренда: A/B-тесты форматов, YouTube Analytics</div></div>
-    <div class="metric"><div class="v">20 → 80%</div><div class="l">точность AI-скоринга на пилотной выборке 30 анкет, blind-тест против ручной разметки</div></div>
-    <div class="metric"><div class="v">~97%</div><div class="l">CSAT игры-сервиса для A/B-тестирования, 2 581 прохождение</div></div>
+    <h1>Беру продукты в хаосе<br>и довожу их <em>до рынка</em></h1>
+    <p class="lede">Трижды выстроил Discovery-процесс с нуля, запустил три продукта 0→1 в B2B SaaS (HR-Tech) и медиа. Сейчас веду сервис внедрения ИИ-агентов в бизнес-процессы МСБ: <b>8 платных внедрений за четыре месяца</b>, от исследования рынка до приёмки у клиента. <b>Ищу найм.</b></p>
+    <div class="actions">
+      <a class="btn btn--p" href="#experience">Смотреть опыт</a>
+      <a class="btn btn--g" href="https://t.me/soulvictor" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.5.5-1 .5l.3-4.4 8.1-7.3c.3-.3 0-.5-.5-.2L7.5 13.3l-4.2-1.3c-.9-.3-.9-.9.2-1.3l16.4-6.3c.8-.3 1.4.2 1.1 1z"/></svg>
+        Telegram
+      </a>
+    </div>
   </div>
 
-  <section id="research" class="in">
-    <div class="research">
-      <div class="k">Исследования рынка · четыре публичных</div>
-      <div class="n">86 тыс. платящих · 1–4,3 млрд ₽ в год</div>
-      <p>Построил и опубликовал <b>оценку потерь рынка от блокировок ИИ-аккаунтов, которой до этого не было</b>: столько людей потеряли доступ и не вернули его, столько сгорело в оплаченных подписках. OSINT 16 кейсов, Monte Carlo 200 тыс. сценариев, шесть версий модели с самоаудитом, рецензирование пятью ИИ-экспертами. Интервал широкий — это честная неопределённость модели. Код открыт, оценку можно пересчитать: <a href="https://discovery-system.ru/lost-accounts.html" target="_blank" rel="noopener">discovery-system.ru</a></p>
+  <section id="proof" aria-label="Метрики">
+    <div class="proof">
+      <div>
+        <div class="n">8</div>
+        <div class="d">платных внедрений за 4 месяца, от 15 000 ₽ за внедрение</div>
+      </div>
+      <div>
+        <div class="n"><em>×1.8</em></div>
+        <div class="d">Time-to-Market после JTBD-сегментации, внутренний замер</div>
+      </div>
+      <div>
+        <div class="n"><em>+16%</em></div>
+        <div class="d">к годовой выручке медиа-бренда: A/B-тесты форматов</div>
+      </div>
+      <div>
+        <div class="n">20 → 80%</div>
+        <div class="d">точность AI-скоринга, blind-тест на 30 анкетах</div>
+      </div>
     </div>
   </section>
 
-  <section id="experience" class="in">
-    <h2>Опыт</h2>
-
-    <div class="job">
-      <div class="head"><h3>Head of Product / Founder</h3><span class="dates">07/2026 — сейчас</span></div>
-      <div class="co">Discovery System · сервис внедрения ИИ-агентов в бизнес-процессы МСБ · один веду стратегию, продукт, цену, продажи, внедрение и команду</div>
-      <ul>
-        <li><b>Стратегия и категория.</b> Разобрал ~100 предложений конкурентов и занял нишу между интеграторами (внедрение от 49 000 ₽, сборка с нуля) и конструкторами (1 500 ₽/мес без результата): агент ставится в контур клиента и передаётся вместе с данными — это снимает 152-ФЗ и риск отзыва аккаунта. Сегментировал МСБ по цене ошибки, вёл продукт по TCO.</li>
-        <li><b>Экономика и цена.</b> Прайс-лестница из 13 позиций: вход 3 000 ₽, внедрение 15 000–60 000 ₽, поддержка 15 000–40 000 ₽/мес. Вход в 3 раза дешевле студий, повторная продажа даёт 100% маржи. Экономику клиента считаю до продажи: агент 1 100 ₽/мес против ставки сотрудника 16 250–65 000 ₽/мес с налогами, окупаемость с первого месяца.</li>
-        <li><b>Продукт — что собрал сам.</b> <b>Установщик агентов</b>: ставит агента на компьютер клиента и передаёт его целиком, со навыками под задачу. <b>Ночной бот входящих</b>: Telegram Business, отвечает от лица владельца, различает деловой и личный вход, квалифицирует лид по задаче, сегменту, бюджету и сроку, пушит горячие обращения; управление /stop, /on, /status. <b>Автовыдача</b>: оплата и доставка входных продуктов идут без моего участия.</li>
-        <li><b>Разведка рынка.</b> <b>Парсер лидов</b>: 57 Telegram-каналов заказов, 50 ниш, точность 63% против 47% у наивного поиска — разметка 110 карточек вручную, баттл-тесты на регрессиях. <b>Парсеры рынков и конкурентов</b>: мониторинг цен и офферов, еженедельные брифы по рынку ИИ-агентов. <b>Четыре публичных исследования</b>, включая оценку потерь от блокировок ИИ-аккаунтов (86 тыс. платящих, 1–4,3 млрд ₽/год) — работают входом воронки продаж.</li>
-        <li><b>Продажи и команда.</b> 8 платных внедрений за 4 месяца по 15 000 ₽ за внедрение, два канала без рекламного бюджета — Авито и Kwork; первый клиент вернулся за следующими продуктами. В работе сделка на 50 000 ₽. Установки ведёт стажёр на проценте от лидов по SOP, задачи и приёмка на мне.</li>
-      </ul>
+  <section id="research">
+    <div class="shead"><span class="idx">01</span><h2>Исследования рынка</h2></div>
+    <div class="research">
+      <div class="mono">Четыре публичных исследования · код открыт</div>
+      <div class="num">86 тыс. платящих · <span>1–4,3 млрд ₽</span> в год</div>
+      <p>Построил и опубликовал оценку потерь рынка от блокировок ИИ-аккаунтов, которой до этого не было: столько людей потеряли доступ и не вернули его, столько сгорело в оплаченных подписках. Интервал широкий — это честная неопределённость модели, а не прикрытие. Оценку можно пересчитать: <a href="https://discovery-system.ru" target="_blank" rel="noopener">открытый код и метод</a></p>
+      <div class="method">
+        <div><b>16</b> кейсов OSINT</div>
+        <div><b>200 000</b> сценариев Monte Carlo</div>
+        <div><b>6</b> версий модели с самоаудитом</div>
+        <div><b>5</b> ИИ-рецензентов</div>
+      </div>
     </div>
+  </section>
 
-    <div class="job">
-      <div class="head"><h3>Head of Product</h3><span class="dates">04/2026 — 06/2026</span></div>
-      <div class="co">WorkWay · AI-HR-Tech стартап</div>
+  <section id="experience">
+    <div class="shead"><span class="idx">02</span><h2>Опыт</h2></div>
+
+    <article class="job">
+      <div class="side">
+        <div class="idx">01 — сейчас</div>
+        <h3>Head of Product / Founder</h3>
+        <div class="dates">07/2026 — сейчас</div>
+        <div class="co"><b>Discovery System</b><br>сервис внедрения ИИ-агентов в бизнес-процессы МСБ<br>стратегия, продукт, цена, продажи, внедрение, команда — на мне</div>
+      </div>
       <ul>
-        <li>Запустил разработку AI-HRM-платформы на основе Discovery, лидируя Fullstack и Junior PM.</li>
-        <li>Переработал промпт AI-скоринга: точность <b>с 20% до 80%</b> на выборке из 30 анкет, Time-to-Hire ускорился.</li>
+        <li><b>Стратегия и категория.</b> Разобрал ~100 предложений конкурентов и занял нишу между интеграторами (внедрение от 49 000 ₽, сборка с нуля) и конструкторами (1 500 ₽/мес без результата): агент ставится в контур клиента и передаётся вместе с данными — это снимает 152-ФЗ и риск отзыва аккаунта. Сегментировал МСБ по цене ошибки.</li>
+        <li><b>Бизнес-аналитика.</b> Юнит-экономика и TCO: цену ставлю по масштабу задачи, экономику клиента считаю до продажи — агент 1 100 ₽/мес против ставки сотрудника 16 250–65 000 ₽/мес с налогами, окупаемость с первого месяца. Прайс-лестница из 13 позиций: вход 3 000 ₽, внедрение 15 000–60 000 ₽, поддержка до 40 000 ₽/мес.</li>
+        <li><b>Продуктовая аналитика.</b> Воронка от лида до оплаты, CPL и CAC по каждому каналу, LTV и порог CAC/LTV, стоимость прогона парсеров в токенах. Решения по каналам принимаю по цифрам: мёртвый канал закрывается на седьмой день.</li>
+        <li><b>Продукт — собрал сам.</b> <b>Установщик агентов</b>: ставит агента на компьютер клиента и передаёт целиком, со навыками под задачу. <b>Ночной бот входящих</b>: Telegram Business, отвечает от лица владельца, различает деловой и личный вход, квалифицирует лид по задаче, сегменту, бюджету и сроку, пушит горячие обращения. <b>Автовыдача</b>: оплата и доставка идут без моего участия.</li>
+        <li><b>Маркетинг и автоматизация привлечения.</b> SEO/GEO-контур: лендинг, гео-страницы, открытый репозиторий под AI-поиск. Контент в Telegram-канале и статьи-расследования на VC.ru, один кейс раскладываю в пять форматов. TG-радар на cron — 57 каналов, ~20 свежих заказов в день; парсеры Kwork, FL и Авито.</li>
+        <li><b>Продажи и приёмка.</b> Восемь платных внедрений за четыре месяца по 15 000 ₽, два канала без рекламного бюджета — Авито и Kwork; первый клиент вернулся за следующими продуктами. Критерии приёмки фиксирую до старта, тест — на задачах клиента при нём. В работе сделка на 50 000 ₽.</li>
+        <li><b>Команда.</b> Стажёр на проценте от лидов ведёт установки по SOP; задачи, контроль и приёмка на мне.</li>
       </ul>
-    </div>
+    </article>
 
-    <div class="job">
-      <div class="head"><h3>Product &amp; Growth Consultant</h3><span class="dates">09/2025 — 04/2026</span></div>
-      <div class="co">восприятие · консалтинг для МСБ</div>
+    <article class="job">
+      <div class="side">
+        <div class="idx">02</div>
+        <h3>Head of Product</h3>
+        <div class="dates">04/2026 — 06/2026</div>
+        <div class="co"><b>WorkWay</b><br>AI-HR-Tech, стартап</div>
+      </div>
       <ul>
-        <li>Разработал 3 стратегии роста и оптимизации бизнеса, проконсультировал 4 бренда: Wellness, Mental Health, Media.</li>
-        <li>Внедрил сегментации ЦА, маркетинг-миксы и реферальные механики; запуск в Pinterest с нуля дал +14 000 показов за первый месяц без рекламного бюджета.</li>
+        <li>Запустил разработку AI-HRM-платформы на основе Discovery, ведя Fullstack-разработчика и Junior PM.</li>
+        <li>Переработал логику AI-скоринга кандидатов: точность <b>с 20% до 80%</b> на выборке из 30 анкет, Time-to-Hire сократился.</li>
       </ul>
-    </div>
+    </article>
 
-    <div class="job">
-      <div class="head"><h3>Бизнес-ассистент CEO → Discovery Product Manager</h3><span class="dates">01/2024 — 08/2025</span></div>
-      <div class="co">NewGen Vision · Chill Music Lab, медиа-бренд ~4M MAU</div>
+    <article class="job">
+      <div class="side">
+        <div class="idx">03</div>
+        <h3>Product &amp; Growth Consultant</h3>
+        <div class="dates">09/2025 — 04/2026</div>
+        <div class="co"><b>восприятие</b><br>консалтинг для МСБ</div>
+      </div>
+      <ul>
+        <li>Разработал три стратегии роста и оптимизации бизнеса, проконсультировал четыре бренда: Wellness, Mental Health, Media.</li>
+        <li>Внедрил сегментацию ЦА, маркетинг-миксы и реферальные механики; запуск в Pinterest с нуля дал +14 000 показов за первый месяц без рекламного бюджета.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="side">
+        <div class="idx">04</div>
+        <h3>Discovery Product Manager</h3>
+        <div class="dates">01/2024 — 08/2025</div>
+        <div class="co"><b>NewGen Vision · Chill Music Lab</b><br>медиа-бренд, ~4M MAU</div>
+      </div>
       <ul>
         <li><b>Построил продуктовую функцию компании с нуля</b>, синхронизировал C-level, продукт, маркетинг и дизайн.</li>
-        <li>Discovery-процесс, JTBD-ТЗ и контент-планы: Time-to-Market <b>×1.8</b>, Revenue на единицу контента ×1.2.</li>
-        <li>80+ глубинных JTBD-интервью, 8 исследовательских циклов. Диагностировал стадию «спад» — канал вернулся к <b>6.5M+ просмотров в месяц</b>.</li>
-        <li>Product Owner: запустил игру-сервис для A/B-тестирований за 3 месяца с командой 11 человек — CR ~50%, CSAT ~97%, результаты дали <b>+16% к выручке бренда</b>.</li>
+        <li>Внедрил Discovery-процесс, JTBD-ТЗ и контент-планы: Time-to-Market <b>×1.8</b>, выручка на единицу контента ×1.2.</li>
+        <li>80+ глубинных JTBD-интервью, восемь исследовательских циклов. Диагностировал стадию спада — канал вернулся к <b>6,5 млн просмотров в месяц</b>.</li>
+        <li>Как Product Owner запустил игру-сервис для A/B-тестирований за три месяца с командой из 11 человек: конверсия ~50%, CSAT ~97%, результаты дали <b>+16% к выручке бренда</b>.</li>
       </ul>
-    </div>
+    </article>
   </section>
 
-  <section class="in">
-    <h2>Рекомендации</h2>
+  <section aria-label="Рекомендации">
+    <div class="shead"><span class="idx">03</span><h2>Рекомендации</h2></div>
     <div class="quotes">
-      <div class="quote">
-        <p>«Взвешенно принимаешь решения и держишь слово как партнёр — я доверяю твоей продуктовой логике. Ты проявляешь инициативу там, где её изначально не ждут.»</p>
-        <div class="qa"><span class="n">Артур Прусаков</span><span class="r">Founder/CEO, WorkWay</span></div>
+      <div class="q">
+        <blockquote>Взвешенно принимаешь решения и держишь слово как партнёр — я доверяю твоей продуктовой логике. Ты проявляешь инициативу там, где её изначально не ждут.</blockquote>
+        <div class="who"><b>Артур Прусаков</b><span>Founder / CEO, WorkWay</span></div>
       </div>
-      <div class="quote">
-        <p>«Глубоко погружаешься в продукт и возвращаешься с неожиданными инсайтами. Быстро вливаешься в новое и схватываешь всё на лету.»</p>
-        <div class="qa"><span class="n">Кирилл Поветьев</span><span class="r">Head of Product, Chill Music Lab</span></div>
+      <div class="q">
+        <blockquote>Глубоко погружаешься в продукт и возвращаешься с неожиданными инсайтами. Быстро вливаешься в новое и схватываешь всё на лету.</blockquote>
+        <div class="who"><b>Кирилл Поветьев</b><span>Head of Product, Chill Music Lab</span></div>
       </div>
-      <div class="quote">
-        <p>«Обозначила аудиторию, переписала формулировки на сайте — аж разревелась, потому что до этого всё было размазано, а теперь цепляет. Это было именно то, чего не хватало.»</p>
-        <div class="qa"><span class="n">Альбина Карташова</span><span class="r">Product Manager, Палитра Здоровья</span></div>
+      <div class="q">
+        <blockquote>Обозначила аудиторию, переписала формулировки на сайте — аж разревелась, потому что до этого всё было размазано, а теперь цепляет. Это было именно то, чего не хватало.</blockquote>
+        <div class="who"><b>Альбина Карташова</b><span>Product Manager, Палитра Здоровья</span></div>
       </div>
-      <div class="quote">
-        <p>«Игра-сервис для A/B-тестирований запущена за 3 месяца: 2 581 прохождение, CSAT ~97%, конверсия в финальный экран ~50%.»</p>
-        <div class="qa"><span class="n">Результат проекта</span><span class="r">Chill Music Lab, 2024</span></div>
+      <div class="q">
+        <blockquote>Игра-сервис для A/B-тестирований запущена за три месяца: 2 581 прохождение, CSAT ~97%, конверсия в финальный экран ~50%.</blockquote>
+        <div class="who"><b>Результат проекта</b><span>Chill Music Lab, 2024</span></div>
       </div>
     </div>
   </section>
 
-  <section class="in">
-    <h2>Навыки</h2>
-    <div class="chips">
-      <span class="chip hot">Внедрение ИИ</span><span class="chip hot">ИИ-агенты</span><span class="chip hot">LLM</span><span class="chip hot">Автоматизация бизнес-процессов</span><span class="chip">Промпт-инжиниринг</span><span class="chip">Python</span><span class="chip">FastAPI</span>
-    </div>
-    <div style="height:10px"></div>
-    <div class="chips">
-      <span class="chip">Продуктовая стратегия</span><span class="chip">Бизнес-моделирование</span><span class="chip">Юнит-экономика</span><span class="chip">Сегментация ЦА (ICP, ABCDX)</span><span class="chip">CustDev</span><span class="chip">AJTBD</span><span class="chip">CJM</span><span class="chip">Продуктовые метрики</span><span class="chip">A/B-тесты</span><span class="chip">MVP 0→1</span><span class="chip">Go-to-Market</span><span class="chip">Управление командой</span>
-    </div>
-    <div style="height:10px"></div>
-    <div class="chips">
-      <span class="chip">Claude Code</span><span class="chip">Hermes</span><span class="chip">Open WebUI</span><span class="chip">Ollama</span><span class="chip">Notion</span><span class="chip">Figma</span><span class="chip">GitHub</span>
+  <section id="skills">
+    <div class="shead"><span class="idx">04</span><h2>Навыки</h2></div>
+    <div class="skills">
+      <div class="skrow"><div class="k">ИИ и агенты</div><div class="v"><b>Внедрение ИИ</b> · <b>ИИ-агенты</b> · <b>LLM</b> · промпт-инжиниринг · автоматизация бизнес-процессов · Python · FastAPI</div></div>
+      <div class="skrow"><div class="k">Продукт</div><div class="v">Продуктовая стратегия · бизнес-моделирование · юнит-экономика · TCO · сегментация (ICP, ABCDX) · AJTBD · CJM · CustDev · продуктовые метрики · A/B-тесты · MVP 0→1 · go-to-market</div></div>
+      <div class="skrow"><div class="k">Аналитика</div><div class="v">Воронка и конверсии · CPL, CAC, LTV · метрики каналов · стоимость прогона в токенах · дашборды</div></div>
+      <div class="skrow"><div class="k">Маркетинг</div><div class="v">SEO/GEO-контур · контент-конвейер · TG-радар на cron · парсеры досок · email-аутрич · медиапостинг</div></div>
+      <div class="skrow"><div class="k">Команда</div><div class="v">Управление командой · приёмка по SOP · критерии приёмки до старта</div></div>
+      <div class="skrow"><div class="k">Инструменты</div><div class="v">Claude Code · Hermes · Open WebUI · Ollama · Notion · Figma · GitHub</div></div>
     </div>
   </section>
 
-  <section class="in">
-    <h2>Образование</h2>
-    <div class="row"><span>Вайбкодинг с Claude — Алексей Крол</span><span class="y">2026</span></div>
-    <div class="row"><span>Проектирование клиентского опыта — Skillbox</span><span class="y">2025</span></div>
-    <div class="row"><span>Product Manager (кейс-чемпионат) — VK × ВШЭ</span><span class="y">2024</span></div>
-    <div class="row"><span>Магистратура, управление продуктами и проектами — СПбПУ Политех</span><span class="y">2023–2025</span></div>
-    <div class="row"><span>Руководитель проекта (стажировка) — ВТБ × СПбПУ Политех</span><span class="y">2021–2022</span></div>
-  </section>
-
-  <section id="hire" class="in">
-    <h2>Ищу</h2>
-    <div class="row"><span><b>Роль:</b> Product Lead / Head of Product — B2B SaaS, медиа, ИИ-продукты</span><span class="y">найм</span></div>
-    <div class="row"><span><b>Формат:</b> удалённо или гибрид, Санкт-Петербург; полная занятость</span><span class="y">готов обсуждать</span></div>
-    <div class="row"><span><b>Ожидания:</b> 320 000 ₽ на руки</span><span class="y">обсуждается</span></div>
-    <div class="row"><span><b>Референсы:</b> CEO WorkWay, Head of Product Chill Music Lab, Product Manager «Палитра Здоровья» — контакты по запросу</span><span class="y">три</span></div>
-    <div class="row"><span><b>Языки:</b> русский — родной, английский — C1, немецкий — A1, французский — A2</span><span class="y">C1</span></div>
-  </section>
-
-  <section id="contact" class="in">
-    <h2>Обсудим продукт?</h2>
-    <div class="cta">
-      <a class="btn btn-p" href="https://t.me/soulvictor" target="_blank" rel="noopener">Написать в Telegram</a>
-      <a class="btn btn-s" href="mailto:viktor.garnett@yandex.ru">viktor.garnett@yandex.ru</a>
+  <section aria-label="Образование">
+    <div class="shead"><span class="idx">05</span><h2>Образование</h2></div>
+    <div class="rows">
+      <div class="row"><span class="k">Вайбкодинг с Claude — Алексей Крол</span><span class="v">2026</span></div>
+      <div class="row"><span class="k">Проектирование клиентского опыта — Skillbox</span><span class="v">2025</span></div>
+      <div class="row"><span class="k">Product Manager, кейс-чемпионат — VK × ВШЭ</span><span class="v">2024</span></div>
+      <div class="row"><span class="k">Магистратура, управление продуктами и проектами — СПбПУ Политех</span><span class="v">2023–2025</span></div>
+      <div class="row"><span class="k">Руководитель проекта, стажировка — ВТБ × СПбПУ Политех</span><span class="v">2021–2022</span></div>
     </div>
-    <div class="links-row">
-      <a href="https://www.linkedin.com/in/victor-zaitsev-product/" target="_blank" rel="noopener">linkedin/victor-zaitsev-product</a>
-      <a href="https://discovery-system.ru" target="_blank" rel="noopener">discovery-system.ru</a>
+  </section>
+
+  <section id="hire">
+    <div class="shead"><span class="idx">06</span><h2>Ищу</h2></div>
+    <div class="rows">
+      <div class="row"><span class="k"><b>Роль.</b> Product Lead / Head of Product — B2B SaaS, медиа, ИИ-продукты</span><span class="v">найм</span></div>
+      <div class="row"><span class="k"><b>Формат.</b> удалённо или гибрид, Санкт-Петербург, полная занятость</span><span class="v">готов обсуждать</span></div>
+      <div class="row"><span class="k"><b>Ожидания.</b> 320 000 ₽ на руки</span><span class="v">обсуждается</span></div>
+      <div class="row"><span class="k"><b>Референсы.</b> CEO WorkWay, Head of Product Chill Music Lab, PM «Палитра Здоровья» — контакты по запросу</span><span class="v">три</span></div>
+      <div class="row"><span class="k"><b>Языки.</b> русский — родной, английский — C1, немецкий — A1, французский — A2</span><span class="v">C1</span></div>
+    </div>
+  </section>
+
+  <section aria-label="Контакты">
+    <div class="contact">
+      <div class="mono" style="margin-bottom:16px">07 — контакт</div>
+      <h2>Обсудим продукт?</h2>
+      <p>Отвечаю в Telegram в течение дня. Резюме на хедхантере и портфолио установок — по запросу.</p>
+      <div class="actions">
+        <a class="btn btn--p" href="https://t.me/soulvictor" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn btn--g" href="mailto:viktor.garnett@yandex.ru">viktor.garnett@yandex.ru</a>
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/victor-zaitsev-product/" target="_blank" rel="noopener">linkedin.com/in/victor-zaitsev-product</a>
+        <a href="https://discovery-system.ru" target="_blank" rel="noopener">discovery-system.ru</a>
+      </div>
     </div>
   </section>
 
@@ -277,17 +393,28 @@ footer{margin-top:88px;padding-top:22px;border-top:1px solid var(--line);display
     <span>© 2026 Виктор Зайцев</span>
     <span>Санкт-Петербург · Remote</span>
   </footer>
-</div>
+</main>
 
 <script>
 (function(){
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.in').forEach(function(e){e.classList.add('on')});return;}
-  var els=document.querySelectorAll('.in');
-  var show=function(el){el.classList.add('on')};
-  if(!('IntersectionObserver' in window)){els.forEach(show);return;}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}})},{threshold:.08});
-  els.forEach(function(o){io.observe(o)});
-  setTimeout(function(){els.forEach(show)},2500);
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;                        // при reduced-motion контент и так виден
+  document.documentElement.classList.add('anim');
+  var els = document.querySelectorAll('html.anim section, html.anim .proof');
+  var show = function(el){ el.classList.add('reveal','on'); };
+  var arm = function(el){ el.classList.add('reveal'); };
+  els.forEach(arm);
+  if (!('IntersectionObserver' in window)){ els.forEach(show); return; }
+  var io = new IntersectionObserver(function(list){
+    list.forEach(function(e){ if (e.isIntersecting){ show(e.target); io.unobserve(e.target); } });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:.05});
+  els.forEach(function(el){
+    if (el.getBoundingClientRect().top < innerHeight) show(el); else io.observe(el);
+  });
+  addEventListener('scroll', function once(){                 // фолбэк 1: первый скролл
+    els.forEach(function(el){ if (el.getBoundingClientRect().top < innerHeight) { show(el); io.unobserve(el); } });
+  }, {passive:true, once:true});
+  setTimeout(function(){ els.forEach(show); }, 2500);          // фолбэк 2: таймаут
 })();
 </script>
 </body>
