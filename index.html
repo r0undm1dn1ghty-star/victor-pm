@@ -49,7 +49,7 @@ strong,b{color:var(--ink);font-weight:600}
 .wrap{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad) 88px}
 
 header{position:sticky;top:0;z-index:20;background:rgba(17,21,36,.94);border-bottom:1px solid var(--line-soft)}
-.nav{max-width:var(--maxw);margin:0 auto;padding:15px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav{max-width:var(--maxw);margin:0 auto;padding:15px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:8px 18px;flex-wrap:wrap}
 .nav .brand{font-family:var(--disp);font-weight:600;font-size:15.5px;color:var(--ink);letter-spacing:-.015em}
 .nav .brand i{font-style:normal;color:var(--accent)}
 .nav .go{font-size:14px;color:var(--meta);transition:color .25s var(--ease)}
@@ -158,8 +158,11 @@ html.anim .reveal.on{opacity:1;transform:none}
 }
 @media (max-width:560px){
   .figures{grid-template-columns:1fr;gap:24px}
+  .nav{padding:12px var(--pad)}
+  .nav .brand{font-size:15px}
   .nav .go{font-size:13.5px}
 }
+p,li,td,th,.q,.sk{overflow-wrap:break-word}
 </style>
 </head>
 <body>
