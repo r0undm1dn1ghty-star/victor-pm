@@ -1230,7 +1230,7 @@ function mount({ stage, svg, read, onPick }, value) {
 
   const C = Cam(45, 0.5, 1.5);
   fit(C, [[-70, -34, 0], [70, 26, 0], [-70, 26, 0], [70, -34, 0], [-12, -62, 58], [12, -62, 58],
-    [-70, -34, TOP + 4 * 4.2], [40, -26, TOP + 4 * 4.2 + 48], [-42, -2.8, 78 + 48],
+    [-70, -34, TOP + 4 * 4.6], [40, -26, TOP + 4 * 4.6 + 48], [-42, -2.8, 78 + 48],
     [6.3, -52.8, 89.7], [-6.3, -52.8, 89.7], [16.4, -27.6, 48.6], [-16.4, -27.6, 48.6]], 200, 166);
   const P = proj(C), front = facing(C);
 
@@ -1262,9 +1262,9 @@ function mount({ stage, svg, read, onPick }, value) {
   const turn = tween(0);
   let act = -1, far = value, turnNow = 0;
 
-  const redraw = () => {
+  const redraw = (now) => {
     THINGS.forEach((t, k) => {
-      const poses = t.draw(P, front, tval(lifts[k], 0));
+      const poses = t.draw(P, front, tval(lifts[k], now));
       poses.forEach((p, i) => parts[k].els[i].setAttribute("d", p.d));
     });
     const hp = head(P, front, turnNow);
@@ -1279,17 +1279,19 @@ function mount({ stage, svg, read, onPick }, value) {
     });
     turnNow = tval(turn, now);
     if (!tdone(turn, now)) moving = true;
-    redraw();
+    redraw(now);
     return moving;
   });
   bag.add(B.unregister);
 
   function choose(a) {
     if (a === act) return;
+    const prev = act;
     act = a;
     const now = performance.now();
     THINGS.forEach((t, i) => {
-      tset(lifts[i], a === i ? far : a < 0 ? 0 : -10, now, Math.abs(i - a) * 45);
+      const from = a >= 0 ? a : prev;
+      tset(lifts[i], a === i ? far : a < 0 ? 0 : -10, now, Math.abs(i - from) * 45);
       sils(i).forEach((el) => el.classList.toggle("hi", a === i));
     });
     tset(turn, a < 0 ? 0 : clamp(THINGS[a].cx / 11, -4.6, 4.6), now, 0);
@@ -1305,7 +1307,7 @@ function mount({ stage, svg, read, onPick }, value) {
   }));
   bag.add(() => svg.replaceChildren());
 
-  redraw();
+  redraw(performance.now());
   sils(1).forEach((el) => el.classList.add("hi"));   // the rest mark
 
   return {
