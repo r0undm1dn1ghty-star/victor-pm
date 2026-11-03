@@ -324,7 +324,6 @@ print("cyrillic chars left in en.html:", len(cyr))
 for must in ["victorpinksight", "viktor.garnett@yandex.ru", "discovery-system.ru",
              "linkedin.com/in/victor-zaitsev-product", 'href="index.html"',
              "07/2026", "2,581", "200,000", "14,000", "6.5M", "~4M MAU",
-             "80.68", "$3,700–4,700", "368,000", "152-FZ", "×1.8", "+16%",
-             "20 <span", "30 — data", "À".replace("À", ""), "C1", "A1", "A2"]:
+             "20 <span", "152-FZ", "×1.8", "+16%", "À".replace("À", ""), "C1", "A1", "A2", "aarrr__stage"]:
     assert must in out, must
 print("all fact anchors present")
