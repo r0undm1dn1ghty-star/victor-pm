@@ -89,9 +89,9 @@ html.anim .aarrr.reveal.on{opacity:1;transform:none}
 .quote-card + .quote-card{margin-top:22px;padding-top:22px;border-top:1px solid var(--line-soft)}
 
 /* ——— образование: бейджи ——— */
-.row{display:flex;align-items:center;gap:14px}
 .row .badge{width:38px;height:38px;flex:none;border-radius:10px;display:grid;place-items:center;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--accent);background:rgba(123,196,168,.1);border:1px solid var(--accent-40);overflow:hidden}
 .row .badge img{width:100%;height:100%;object-fit:contain;display:block;background:#fff}
+.row .badge:not(:has(img)){background:#fff;color:#111524;font-weight:600}
 .row .row-txt{flex:1;min-width:0}
 .ar{font-family:var(--disp)}          /* стрелка берётся из Onest: в IBM Plex её нет */
 
@@ -188,7 +188,7 @@ section{padding-top:clamp(76px,10vw,140px)}
 .skills b{color:var(--ink)}
 .skills span{color:var(--meta)}
 .rows{max-width:760px;border-top:1px solid var(--line-soft)}
-.row{display:grid;grid-template-columns:1fr auto;gap:4px 24px;padding:16px 0;border-bottom:1px solid var(--line-soft);font-size:15.5px;align-items:baseline}
+.row{display:grid;grid-template-columns:38px 1fr auto;gap:4px 14px;padding:16px 0;border-bottom:1px solid var(--line-soft);font-size:15.5px;align-items:center}
 .row .v{font-size:13.5px;color:var(--meta);white-space:nowrap}
 table.seek{width:100%;max-width:760px;border-collapse:collapse;font-size:15.5px}
 table.seek th,table.seek td{text-align:left;padding:15px 0;border-bottom:1px solid var(--line-soft);vertical-align:top}
