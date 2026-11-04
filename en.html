@@ -179,7 +179,8 @@ section{padding-top:clamp(76px,10vw,140px)}
 .quote-card{display:flex;gap:16px;align-items:flex-start}
 .avatar{width:46px;height:46px;flex:none;border-radius:50%;overflow:hidden;display:grid;place-items:center;font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:.02em;color:var(--ink);background:linear-gradient(135deg,rgba(123,196,168,.28),rgba(123,196,168,.08));border:1px solid var(--accent-40)}
 .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
-.quote-card .q{flex:1;padding-left:0}
+.quote-card .q{flex:1;padding-left:0;max-width:none}
+.quote-card .q::before{display:none}
 .quote-card + .quote-card{margin-top:22px;padding-top:22px;border-top:1px solid var(--line-soft)}
 .cases{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px);margin-top:clamp(28px,4vw,44px)}
 .case{border-top:1px solid var(--line-soft);padding-top:18px;position:relative}
@@ -1219,6 +1220,7 @@ draw();
         <div class="res tnum">2,581 sessions · CSAT ~97% · +16% revenue</div>
       </article>
     </div>
+    <p style="margin-top:20px;font-size:14px;color:var(--meta)">Code and method for every study are open — <a href="https://discovery-system.ru" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-40)">discovery-system.ru</a></p>
   </section>
 
   <section id="experience">
@@ -1241,7 +1243,6 @@ draw();
         <li><b>Sales.</b> Took the service to repeat sales with zero ad budget — the first client came back for more products. Sign-off criteria are fixed before the start; the test runs on the client&#39;s own tasks.</li>
         <li><b>Team.</b> An intern on a revenue share runs installs by SOP; tasks, review and sign-off stay with me.</li>
       </ul>
-      <p style="margin-top:14px;font-size:14px;color:var(--meta)">Research: <a href="https://discovery-system.ru" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-40)">code and method are open — discovery-system.ru</a></p>
     </article>
 
     <article class="job">
@@ -1259,7 +1260,6 @@ draw();
         <li><b>Monetization before code.</b> 3 tiers + upsells from the Service Blueprint; talked the founder out of a pivot with a canvas analysis.</li>
         <li><b>Team.</b> Hired a fullstack developer and a junior PM: profiles, interview scripts, onboarding, OKRs and 1-on-1s.</li>
       </ul>
-      <p style="margin-top:14px;font-size:14px;color:var(--meta)">Research: <a href="https://discovery-system.ru" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-40)">code and method are open — discovery-system.ru</a></p>
     </article>
 
     <article class="job">
@@ -1275,7 +1275,6 @@ draw();
         <li><b>Growth strategies.</b> Three business-optimization strategies across four brands: Wellness, Mental Health, Media.</li>
         <li><b>Implementation.</b> Audience segmentation, marketing mixes, referral mechanics; Pinterest from zero — +14,000 impressions in the first month, no ad budget.</li>
       </ul>
-      <p style="margin-top:14px;font-size:14px;color:var(--meta)">Research: <a href="https://discovery-system.ru" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-40)">code and method are open — discovery-system.ru</a></p>
     </article>
 
     <article class="job">
@@ -1293,7 +1292,6 @@ draw();
         <li><b>Product Owner</b> <span style="color:var(--meta)">02–07/2024 · 6 mo</span>. Game-based A/B service in 3 months, team of 11: 2,581 sessions, CR ~50%, CSAT ~97%, +16% brand revenue.</li>
         <li><b>CEO business assistant</b> <span style="color:var(--meta)">01/2024–06/2025 · 1 yr 6 mo</span>. Strategic and product decisions: research, presentations, risk management. Hired the company's first two PMs with my own hiring system.</li>
       </ul>
-      <p style="margin-top:14px;font-size:14px;color:var(--meta)">Research: <a href="https://discovery-system.ru" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-40)">code and method are open — discovery-system.ru</a></p>
     </article>
   </section>
 
@@ -1325,7 +1323,7 @@ draw();
     <h2>Skills</h2>
     <div class="skills" style="margin-top:26px">
       <p><b>Strategy.</b> <span>Product vision, Business modeling, Unit economics and TCO, OKR, ICP and ABCDX segmentation, Value prop, RAT, Service Blueprint</span></p>
-      <p><b>Discovery.</b> <span>CustDev, AJTBD/JTBD interviews, CJM, UX tests, Hypothesis testing — 130+ interviews, Dozens of research cycles</span></p>
+      <p><b>Discovery.</b> <span>CustDev, AJTBD/JTBD interviews, CJM, UX tests, Hypothesis testing — 130+ interviews, 20+ research cycles</span></p>
       <p><b>Delivery.</b> <span>MVP 0→1, PRD, Roadmap, Backlog, Sprints, ScrumBan, Zero-budget go-to-market, DoR/DoD sign-off, SOPs</span></p>
       <p><b>AI and agents.</b> <span>AI-agent rollout, Prompt engineering, Process automation, Python, FastAPI, Local models</span></p>
       <p><b>Team.</b> <span>Hiring from zero, Onboarding, OKR, 1-on-1s, Performance reviews, Teams up to 11</span></p>

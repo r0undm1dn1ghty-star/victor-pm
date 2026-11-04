@@ -85,7 +85,8 @@ html.anim .aarrr.reveal.on{opacity:1;transform:none}
 .quote-card{display:flex;gap:16px;align-items:flex-start}
 .avatar{width:46px;height:46px;flex:none;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:.02em;color:var(--ink);background:linear-gradient(135deg,rgba(123,196,168,.28),rgba(123,196,168,.08));border:1px solid var(--accent-40)}
 .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
-.quote-card .q{flex:1;padding-left:0}
+.quote-card .q{flex:1;padding-left:0;max-width:none}
+.quote-card .q::before{display:none}
 .quote-card + .quote-card{margin-top:22px;padding-top:22px;border-top:1px solid var(--line-soft)}
 
 /* ——— образование: бейджи ——— */
@@ -1219,6 +1220,7 @@ draw();
         <div class="res tnum">2 581 прохождение · CSAT ~97% · +16% revenue</div>
       </article>
     </div>
+    <p style="margin-top:20px;font-size:14px;color:var(--meta)">Код и метод всех исследований открыты — <a href="https://discovery-system.ru" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-40)">discovery-system.ru</a></p>
   </section>
 
   <section id="experience">
@@ -1241,7 +1243,6 @@ draw();
         <li><b>Продажи.</b> Довёл сервис до повторных продаж без рекламного бюджета: первый клиент вернулся за следующими продуктами. Критерии приёмки фиксирую до старта, тест — на задачах клиента при нём.</li>
         <li><b>Команда.</b> Стажёр на проценте от лидов ведёт установки по SOP; задачи, контроль и приёмка на мне.</li>
       </ul>
-      <p style="margin-top:14px;font-size:14px;color:var(--meta)">Исследование: <a href="https://discovery-system.ru" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-40)">код и метод открыты — discovery-system.ru</a></p>
     </article>
 
     <article class="job">
@@ -1259,7 +1260,6 @@ draw();
         <li><b>Монетизация до кода.</b> 3 тарифа + апселлы на основе Service Blueprint; анализом канвы убедил фаундера отказаться от пивота.</li>
         <li><b>Команда.</b> Нанял Fullstack-разработчика и Junior PM: профили, скрипты интервью, онбординг, OKR и 1-on-1.</li>
       </ul>
-      <p style="margin-top:14px;font-size:14px;color:var(--meta)">Исследование: <a href="https://discovery-system.ru" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-40)">код и метод открыты — discovery-system.ru</a></p>
     </article>
 
     <article class="job">
@@ -1275,7 +1275,6 @@ draw();
         <li><b>Стратегии роста.</b> Три стратегии оптимизации бизнеса, четыре бренда: Wellness, Mental Health, Media.</li>
         <li><b>Внедрение.</b> Сегментация ЦА, маркетинг-миксы, реферальные механики; Pinterest с нуля — +14 000 показов за первый месяц без бюджета.</li>
       </ul>
-      <p style="margin-top:14px;font-size:14px;color:var(--meta)">Исследование: <a href="https://discovery-system.ru" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-40)">код и метод открыты — discovery-system.ru</a></p>
     </article>
 
     <article class="job">
@@ -1293,7 +1292,6 @@ draw();
         <li><b>Product Owner</b> <span style="color:var(--meta)">02–07/2024 · 6 мес</span>. Игра-сервис для A/B-тестов за 3 месяца, команда 11 человек: 2 581 прохождение, CR ~50%, CSAT ~97%, +16% к выручке бренда.</li>
         <li><b>Бизнес-ассистент CEO</b> <span style="color:var(--meta)">01/2024–06/2025 · 1 год 6 мес</span>. Стратегические и продуктовые решения: исследования, презентации, риск-менеджмент. Нанял двух первых PM компании по своей системе найма.</li>
       </ul>
-      <p style="margin-top:14px;font-size:14px;color:var(--meta)">Исследование: <a href="https://discovery-system.ru" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent-40)">код и метод открыты — discovery-system.ru</a></p>
     </article>
   </section>
 
@@ -1325,7 +1323,7 @@ draw();
     <h2>Навыки</h2>
     <div class="skills" style="margin-top:26px">
       <p><b>Стратегия.</b> <span>видение продукта, бизнес-моделирование, юнит-экономика и TCO, OKR, сегментация ICP и ABCDX, УЦП, RAT, Service Blueprint</span></p>
-      <p><b>Discovery.</b> <span>CustDev, AJTBD/JTBD-интервью, CJM, UX-тесты, коридорки, проверка гипотез — 130+ интервью, десятки циклов</span></p>
+      <p><b>Discovery.</b> <span>CustDev, AJTBD/JTBD-интервью, CJM, UX-тесты, коридорки, проверка гипотез — 130+ интервью, 20+ исследовательских циклов</span></p>
       <p><b>Delivery.</b> <span>MVP 0→1, PRD, Roadmap, бэклог, спринты, ScrumBan, go-to-market без бюджета, приёмка по DoR/DoD, SOP</span></p>
       <p><b>ИИ и агенты.</b> <span>внедрение ИИ-агентов, промпт-инжиниринг, автоматизация процессов, Python, FastAPI, локальные модели</span></p>
       <p><b>Команда.</b> <span>найм с нуля, онбординг, OKR, 1-on-1, performance-синки, управление до 11 человек</span></p>
