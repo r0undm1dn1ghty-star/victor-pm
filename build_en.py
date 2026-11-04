@@ -94,6 +94,42 @@ BODY = """<header>
     </div>
   </section>
 
+  <section class="aarrr reveal" id="aarrr" aria-label="AARRR funnel">
+    <div class="aarrr__eyebrow">NSM · AARRR</div>
+    <h2>I run products on a funnel — from traffic to money</h2>
+    <p class="aarrr__sub">Every stage carries a number and its measurement base — no invented coefficients.</p>
+
+    <ol class="aarrr__track">
+      <li class="aarrr__stage">
+        <small>Acquisition</small>
+        <div class="aarrr__num tnum"><em>6.5M</em>/mo</div>
+        <div class="aarrr__base">views on the flagship channel · <b>~4M MAU</b> media brand</div>
+      </li>
+      <li class="aarrr__stage">
+        <small>Activation</small>
+        <div class="aarrr__num tnum">20 <em>→</em> 80%</div>
+        <div class="aarrr__base">AI-scoring accuracy · <b>blind test, n=30</b></div>
+      </li>
+      <li class="aarrr__stage">
+        <small>Retention</small>
+        <div class="aarrr__num tnum"><em>~97%</em> CSAT</div>
+        <div class="aarrr__base">satisfaction · <b>n=2,581</b>, game-based A/B service</div>
+      </li>
+      <li class="aarrr__stage">
+        <small>Referral</small>
+        <div class="aarrr__num tnum"><em>3</em> references</div>
+        <div class="aarrr__base">WorkWay CEO · Chill HoP · Palitra PM</div>
+      </li>
+      <li class="aarrr__stage">
+        <small>Revenue</small>
+        <div class="aarrr__num tnum"><em>+16%</em> · <em>8</em></div>
+        <div class="aarrr__base">to brand revenue · 8 paid deployments in 4 months</div>
+      </li>
+    </ol>
+
+    <p class="aarrr__watch"><b>Tracked</b>lead→payment funnel · 7-day rule · CPL · CAC · LTV · TCO · token cost per run · A/B · ICE/RICE</p>
+  </section>
+
   <section id="research">
     <h2>I sized the lost-AI-account market</h2>
     <div class="estimate tnum" style="margin-top:24px">RUB 1–4.3B <span>a year</span></div>
