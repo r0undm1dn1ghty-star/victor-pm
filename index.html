@@ -90,7 +90,8 @@ html.anim .aarrr.reveal.on{opacity:1;transform:none}
 
 /* ——— образование: бейджи ——— */
 .row{display:flex;align-items:center;gap:14px}
-.row .badge{width:38px;height:38px;flex:none;border-radius:10px;display:grid;place-items:center;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--accent);background:rgba(123,196,168,.1);border:1px solid var(--accent-40)}
+.row .badge{width:38px;height:38px;flex:none;border-radius:10px;display:grid;place-items:center;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--accent);background:rgba(123,196,168,.1);border:1px solid var(--accent-40);overflow:hidden}
+.row .badge img{width:100%;height:100%;object-fit:contain;display:block;background:#fff}
 .row .row-txt{flex:1;min-width:0}
 .ar{font-family:var(--disp)}          /* стрелка берётся из Onest: в IBM Plex её нет */
 
@@ -1300,19 +1301,19 @@ draw();
     <h2>Что говорят те, с кем работал</h2>
     <div class="quotes" style="margin-top:28px">
       <div class="quote-card">
-        <span class="avatar" aria-hidden="true">АП</span>
-        <div class="q"><i>«</i>Взвешенно принимаешь решения и держишь слово как партнёр, я доверяю твоей продуктовой логике. Ты проявляешь инициативу там, где её изначально не ждут.<i>»</i>
-          <span class="who"><b>Артур Прусаков</b> · Founder и CEO, WorkWay</span>
-        </div>
-      </div>
-      <div class="quote-card">
-        <span class="avatar" aria-hidden="true">КП</span>
+        <span class="avatar"><img src="assets/refs/kirill.jpg" alt="Кирилл Поветьев"></span>
         <div class="q"><i>«</i>Глубоко погружаешься в продукт и возвращаешься с неожиданными инсайтами. Быстро вливаешься в новое и схватываешь всё на лету.<i>»</i>
           <span class="who"><b>Кирилл Поветьев</b> · Head of Product, Chill Music Lab</span>
         </div>
       </div>
       <div class="quote-card">
-        <span class="avatar" aria-hidden="true">АК</span>
+        <span class="avatar"><img src="assets/refs/artur.jpg" alt="Артур Прусаков"></span>
+        <div class="q"><i>«</i>Взвешенно принимаешь решения и держишь слово как партнёр, я доверяю твоей продуктовой логике. Ты проявляешь инициативу там, где её изначально не ждут.<i>»</i>
+          <span class="who"><b>Артур Прусаков</b> · Founder и CEO, WorkWay</span>
+        </div>
+      </div>
+      <div class="quote-card">
+        <span class="avatar"><img src="assets/refs/albina.jpg" alt="Альбина Карташова"></span>
         <div class="q"><i>«</i>Обозначила аудиторию, переписала формулировки на сайте, и до этого всё было размазано, а теперь цепляет. Это было именно то, чего не хватало.<i>»</i>
           <span class="who"><b>Альбина Карташова</b> · Product Manager, Палитра Здоровья</span>
         </div>
@@ -1339,11 +1340,11 @@ draw();
       <div class="row"><span class="badge" aria-hidden="true">CA</span><span class="row-txt">Claude Academy · AI for Small Business</span><span class="v tnum">2026</span></div>
       <div class="row"><span class="badge" aria-hidden="true">CA</span><span class="row-txt">Claude Academy · AI Limitations and Possibilities</span><span class="v tnum">2026</span></div>
       <div class="row"><span class="badge" aria-hidden="true">CC</span><span class="row-txt">Вайбкодинг с Claude · Алексей Крол</span><span class="v tnum">2026</span></div>
-      <div class="row"><span class="badge" aria-hidden="true">CX</span><span class="row-txt">Проектирование клиентского опыта · Skillbox</span><span class="v tnum">2025</span></div>
-      <div class="row"><span class="badge" aria-hidden="true">VK</span><span class="row-txt">Product Manager, кейс-чемпионат · VK × ВШЭ</span><span class="v tnum">2024</span></div>
-      <div class="row"><span class="badge" aria-hidden="true">ПУ</span><span class="row-txt">Магистратура, управление продуктами и проектами · СПбПУ Политех</span><span class="v tnum">2023–2025</span></div>
-      <div class="row"><span class="badge" aria-hidden="true">ПУ</span><span class="row-txt">Лингвистика, теория и методика преподавания иностранных языков · СПбПУ Политех</span><span class="v tnum">2019–2023</span></div>
-      <div class="row"><span class="badge" aria-hidden="true">ВТБ</span><span class="row-txt">Руководитель проекта, стажировка · ВТБ × СПбПУ Политех</span><span class="v tnum">2021–2022</span></div>
+      <div class="row"><span class="badge"><img src="assets/logos/skillbox.png" alt="Skillbox"></span><span class="row-txt">Проектирование клиентского опыта · Skillbox</span><span class="v tnum">2025</span></div>
+      <div class="row"><span class="badge"><img src="assets/logos/vk.png" alt="VK"></span><span class="row-txt">Product Manager, кейс-чемпионат · VK × ВШЭ</span><span class="v tnum">2024</span></div>
+      <div class="row"><span class="badge"><img src="assets/logos/ipmeit.png" alt="СПбПУ"></span><span class="row-txt">Магистратура, управление продуктами и проектами · СПбПУ Политех</span><span class="v tnum">2023–2025</span></div>
+      <div class="row"><span class="badge"><img src="assets/logos/ipmeit.png" alt="СПбПУ"></span><span class="row-txt">Лингвистика, теория и методика преподавания иностранных языков · СПбПУ Политех</span><span class="v tnum">2019–2023</span></div>
+      <div class="row"><span class="badge"><img src="assets/logos/vtb.png" alt="ВТБ"></span><span class="row-txt">Руководитель проекта, стажировка · ВТБ × СПбПУ Политех</span><span class="v tnum">2021–2022</span></div>
     </div>
   </section>
 
