@@ -1,0 +1,11 @@
+import re, os, subprocess, sys
+p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "hero-map-en.html")
+s = open(p, encoding="utf-8").read()
+m = re.search(r'<script type="module">([\s\S]*?)</script>', s)
+code = m.group(1)
+mod = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_module.mjs")
+open(mod, "w", encoding="utf-8").write(code)
+r = subprocess.run(["node", "--check", mod], capture_output=True, text=True)
+print("node --check exit:", r.returncode)
+print(r.stdout[-2000:])
+print(r.stderr[-3000:])

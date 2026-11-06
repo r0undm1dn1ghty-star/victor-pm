@@ -56,8 +56,8 @@ BODY = """<header>
         <span class="dot" aria-hidden="true"></span>
         <span><b>Open to work</b> · Head of Product &amp; Product Lead · Saint Petersburg, remote</span>
       </div>
-      <h1>I take products in chaos<br>and ship them <em>to market</em></h1>
-      <p class="lede">Built Discovery from zero three times; shipped three products <span class="ar">0&nbsp;→&nbsp;1</span> across B2B SaaS (HR-tech) and media. Now I run an AI-agent integration service for SMBs: <b>eight paid deployments in four months</b> at ~100% repeat margin — from market research to client sign-off.</p>
+      <h1>I take products from chaos<br>and ship them <em>to market</em></h1>
+      <p class="lede">Built Discovery from zero three times; shipped three products <span class="ar">0&nbsp;→&nbsp;1</span> across B2B SaaS (HR-tech) and media. Now I run an AI-agent integration service for SMBs — from market research to client sign-off: <b>strategy, product, pricing, and sales stay with me</b>.</p>
       <div class="actions">
         <a class="btn btn--p" href="https://t.me/victorpinksight" target="_blank" rel="noopener">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.2-1.6.8l-4.5-3.3-2.2 2.1c-.2.2-.5.5-1 .5l.3-4.4 8.1-7.3c.3-.3 0-.5-.5-.2L7.5 13.3l-4.2-1.3c-.9-.3-.9-.9.2-1.3l16.4-6.3c.8-.3 1.4.2 1.1 1z"/></svg>
