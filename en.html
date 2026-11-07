@@ -1104,12 +1104,6 @@ document.querySelectorAll("[data-mapfig]").forEach(initMap);
 </script>
       <div class="hero__read" aria-live="polite">rest</div>
       <figcaption class="hero__cap">Hover a section — it lights up and lifts. Click jumps to the section; arrow keys and Enter work too.</figcaption>
-    </figure>`;
-}
-function pageHtml({ title, theme = "dark", body, script = "", width = 650 }) {
-    return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escape(title)}</title><style>${ISO_CSS}${PAGE_CSS.replace("__WIDTH__", String(width))}</style></head><body class="iso" data-theme="${theme}"><main class="iso-page">${body}</main>${script ? `
-      <div class="hero__read" aria-live="polite">rest</div>
-      <figcaption class="hero__cap">Hover an item — it lifts and lights up; click to jump to the section. The phone opens Telegram.</figcaption>
     </figure>
   </div>
 
