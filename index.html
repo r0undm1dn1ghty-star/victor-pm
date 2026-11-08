@@ -185,9 +185,18 @@ section{padding-top:clamp(76px,10vw,140px)}
 .q .who b{color:var(--body);font-weight:500}
 
 /* ——— навыки абзацем, образование строками, «ищу» таблицей: три разных носителя ——— */
-.skills{display:grid;gap:15px;max-width:800px;font-size:15.5px}
+.skills{display:grid;gap:14px;max-width:820px;font-size:15.5px}
 .skills b{color:var(--ink)}
 .skills span{color:var(--meta)}
+.skills p[data-lvl="1"]{font-size:16.5px;padding-left:14px;border-left:2px solid var(--accent)}
+.skills p[data-lvl="1"] b{color:var(--accent);font-size:16px;letter-spacing:.02em}
+.skills p[data-lvl="2"]{font-size:15.5px;padding-left:14px;border-left:1px solid rgba(255,255,255,.14)}
+.skills p[data-lvl="3"]{font-size:14.5px;padding-left:14px;border-left:1px solid rgba(255,255,255,.08);opacity:.82}
+.skills__lvl{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:12.5px;color:var(--meta);letter-spacing:.04em;text-transform:uppercase}
+.skills__lvl i{font-style:normal;display:inline-flex;align-items:center;gap:7px}
+.skills__lvl i::before{content:"";width:10px;height:2px;background:var(--accent)}
+.skills__lvl i.s2::before{background:rgba(255,255,255,.35)}
+.skills__lvl i.s3::before{background:rgba(255,255,255,.15)}
 .rows{max-width:760px;border-top:1px solid var(--line-soft)}
 .row{display:grid;grid-template-columns:38px 1fr auto;gap:4px 14px;padding:16px 0;border-bottom:1px solid var(--line-soft);font-size:15.5px;align-items:center}
 .row .v{font-size:13.5px;color:var(--meta);white-space:nowrap}
@@ -723,16 +732,17 @@ draw();
   <section id="skills">
     <h2>Навыки</h2>
     <div class="skills" style="margin-top:26px">
-      <p><b>Стратегия и цена.</b> <span>видение продукта, бизнес-моделирование, юнит-экономика и P&amp;L, TCO, тарифы и прайс-лестница, УЦП, Service Blueprint</span></p>
-      <p><b>Discovery и исследования.</b> <span>CustDev, JTBD/AJTBD-интервью, CJM, UX-тесты, JTBD-ТЗ, конвейер гипотез</span></p>
-      <p><b>Аналитика и метрики.</b> <span>SQL, Amplitude, A/B-тесты, воронки и NSM/AARRR, retention и CSAT, дашборды, ICE/RICE</span></p>
-      <p><b>Рынок и конкуренты.</b> <span>TAM/SAM/SOM, конкурентный анализ, OSINT, бенчмарки, сценарное моделирование</span></p>
-      <p><b>Delivery.</b> <span>MVP 0→1, PRD, Roadmap, бэклог, спринты, Scrumban, приёмка по DoR/DoD, SOP</span></p>
-      <p><b>ИИ и агенты.</b> <span>внедрение ИИ-агентов, промпт-инжиниринг, Python, FastAPI, локальные модели, автоматизация процессов</span></p>
-      <p><b>Рост, медиа и продажи.</b> <span>каналы и воронки, контент-планы, SMM, B2B-переговоры, питчи и защита стратегии перед C-level</span></p>
-      <p><b>Команда.</b> <span>найм с нуля, онбординг, OKR, 1-on-1, performance-синки</span></p>
-      <p><b>Стек.</b> <span>Claude Code, Codex, GitHub, Figma, Miro, Notion, Jira, Confluence, Tilda, Framer, Unisender, Google Sheets</span></p>
+      <p data-lvl="1"><b>Discovery и исследования.</b> <span>CustDev, JTBD/AJTBD-интервью, CJM, UX-тесты, JTBD-ТЗ, конвейер гипотез. 130+ интервью, 20+ циклов — год в медиа-бренде на 4 млн MAU</span></p>
+      <p data-lvl="1"><b>ИИ и агенты.</b> <span>внедрение ИИ-агентов, промпт-инжиниринг, Python, FastAPI, локальные модели, автоматизация. Продукт собрал сам: установщик, ночной бот, автовыдача</span></p>
+      <p data-lvl="1"><b>Стратегия и цена.</b> <span>видение продукта, бизнес-моделирование, юнит-экономика и P&amp;L, TCO, тарифы и прайс-лестница, УЦП, Service Blueprint</span></p>
+      <p data-lvl="2"><b>Аналитика и метрики.</b> <span>SQL, Amplitude, A/B-тесты, воронки и NSM/AARRR, retention и CSAT, дашборды, ICE/RICE</span></p>
+      <p data-lvl="2"><b>Рост, медиа и продажи.</b> <span>каналы и воронки, контент-планы, SMM, B2B-переговоры, питчи и защита стратегии перед C-level</span></p>
+      <p data-lvl="2"><b>Delivery.</b> <span>MVP 0→1, PRD, Roadmap, бэклог, спринты, Scrumban, приёмка по DoR/DoD, SOP</span></p>
+      <p data-lvl="3"><b>Рынок и конкуренты.</b> <span>TAM/SAM/SOM, конкурентный анализ, OSINT, бенчмарки, сценарное моделирование</span></p>
+      <p data-lvl="3"><b>Команда.</b> <span>найм с нуля, онбординг, OKR, 1-on-1, performance-синки</span></p>
+      <p data-lvl="3"><b>Стек.</b> <span>Claude Code, Codex, GitHub, Figma, Miro, Notion, Jira, Confluence, Tilda, Framer, Unisender, Google Sheets</span></p>
     </div>
+    <div class="skills__lvl"><i>ядро — на этом берут</i><i class="s2">сильное</i><i class="s3">рабочее</i></div>
     <p class="skills__base" style="margin-top:18px;font-size:14px;color:var(--meta)">База: <b>130+</b> глубинных интервью · <b>20+</b> исследовательских циклов · команда до <b>11</b> человек · <b>2</b> PM наняты с нуля. Метрики по ступеням воронки — в блоке AARRR выше.</p>
   </section>
 
