@@ -237,15 +237,13 @@ p,li,td,th,.q,.sk{overflow-wrap:break-word}
 @media (max-width:560px){.mapchip{padding:6px 9px 7px;max-width:47%}.mapchip b{font-size:13px}.mapchip span{font-size:13px}}
 
 .mapkey{display:none!important}
-.sknums{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin:30px 0 0;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.09)}
-.sknum b{display:block;font-size:clamp(28px,3.2vw,38px);line-height:1;font-weight:600;letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
-.sknum span{display:block;margin-top:8px;font-size:13.5px;line-height:1.4;color:var(--meta)}
-.skrows{display:grid;gap:15px;max-width:980px;margin-top:28px}
-.skrow{display:grid;grid-template-columns:250px 1fr;gap:26px;align-items:baseline}
-.skrow h4{margin:0;font-size:15.5px;line-height:1.4;font-weight:650;letter-spacing:-.01em;color:var(--ink)}
-.skrow p{margin:0;font-size:15px;line-height:1.62;color:var(--body)}
-.skrow p em{font-style:normal;color:rgba(255,255,255,.28);padding:0 7px}
-@media (max-width:820px){.sknums{grid-template-columns:repeat(2,1fr);gap:22px 18px}.skrow{grid-template-columns:1fr;gap:5px}}
+@media (max-width:820px){.stages{display:grid;gap:0;max-width:980px;margin-top:26px;border-top:1px solid rgba(255,255,255,.09)}
+.stage{display:grid;grid-template-columns:56px 210px 1fr;gap:20px;align-items:baseline;padding:19px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.stage i{font-style:normal;font-size:12.5px;letter-spacing:.06em;color:rgba(255,255,255,.32);font-variant-numeric:tabular-nums}
+.stage h4{margin:0;font-size:17px;line-height:1.3;font-weight:650;letter-spacing:-.012em;color:var(--ink)}
+.stage p{margin:0;font-size:15px;line-height:1.6;color:var(--body)}
+.stage p b{color:var(--meta);font-weight:500}
+@media (max-width:820px){.stage{grid-template-columns:34px 1fr;gap:4px 14px}.stage p{grid-column:2}.stage h4{font-size:16px}}
 </style>
 </head>
 <body>
@@ -1293,20 +1291,12 @@ document.querySelectorAll("[data-mapfig]").forEach(initMap);
 
   <section id="skills">
     <h2>Skills</h2>
-        <div class="sknums">
-      <div class="sknum"><b>130+</b><span>in-depth interviews over three years</span></div>
-      <div class="sknum"><b>20+</b><span>research cycles</span></div>
-      <div class="sknum"><b>4M</b><span>MAU media brand</span></div>
-      <div class="sknum"><b>11</b><span>people on the launch team, two PMs hired by me</span></div>
-    </div>
-    <div class="skrows">
-      <div class="skrow"><h4>Discovery and research</h4><p>CustDev<em>·</em>JTBD/AJTBD interviews<em>·</em>CJM<em>·</em>UX tests<em>·</em>JTBD briefs<em>·</em>hypothesis pipeline</p></div>
-      <div class="skrow"><h4>AI and agents</h4><p>Agent deployment<em>·</em>prompt engineering<em>·</em>Python<em>·</em>FastAPI<em>·</em>local models<em>·</em>built the product myself</p></div>
-      <div class="skrow"><h4>Strategy and pricing</h4><p>Business model<em>·</em>unit economics and P&amp;L<em>·</em>TCO<em>·</em>tiers and price ladder<em>·</em>value proposition<em>·</em>Service Blueprint</p></div>
-      <div class="skrow"><h4>Analytics and metrics</h4><p>SQL<em>·</em>Amplitude<em>·</em>A/B tests<em>·</em>funnels and NSM/AARRR<em>·</em>retention and CSAT<em>·</em>dashboards</p></div>
-      <div class="skrow"><h4>Growth, media and sales</h4><p>Channels and funnels<em>·</em>content plans<em>·</em>SMM<em>·</em>B2B negotiation<em>·</em>pitches and defending strategy to C-level</p></div>
-      <div class="skrow"><h4>Delivery and market</h4><p>0→1 MVP<em>·</em>PRD<em>·</em>roadmap<em>·</em>Scrumban<em>·</em>DoR/DoD<em>·</em>TAM/SAM/SOM<em>·</em>OSINT<em>·</em>benchmarks</p></div>
-      <div class="skrow"><h4>Team and stack</h4><p>Hiring<em>·</em>onboarding<em>·</em>OKRs<em>·</em>1-on-1s<em>·</em>Claude Code<em>·</em>Codex<em>·</em>Figma<em>·</em>Notion<em>·</em>Jira</p></div>
+            <div class="stages">
+      <div class="stage"><i>01</i><h4>Research</h4><p>CustDev · JTBD/AJTBD interviews · CJM · UX tests · hypothesis pipeline · <b>130+ interviews, 20+ cycles</b></p></div>
+      <div class="stage"><i>02</i><h4>Decide</h4><p>business model · unit economics and P&amp;L · TCO · tiers and price ladder · value proposition · picking options with numbers</p></div>
+      <div class="stage"><i>03</i><h4>Build</h4><p>PRD · roadmap · 0→1 MVP · Scrum · sign-off by DoR/DoD · AI agents · prompt engineering · Python, FastAPI</p></div>
+      <div class="stage"><i>04</i><h4>Grow</h4><p>funnels and AARRR · A/B tests · SQL, Amplitude · channels and content · B2B negotiation · pitches to C-level</p></div>
+      <div class="stage"><i>05</i><h4>Lead the team</h4><p>hiring from scratch · onboarding · OKRs · 1-on-1s · SOP and sign-off · <b>two PMs hired personally</b></p></div>
     </div>
     <p class="skills__base" style="margin-top:18px;font-size:14px;color:var(--meta)">Base: <b>130+</b> in-depth interviews · <b>20+</b> research cycles · teams up to <b>11</b> · <b>2</b> PMs hired from scratch. Per-stage metrics live in the AARRR block above.</p>
   </section>
