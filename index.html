@@ -185,9 +185,11 @@ section{padding-top:clamp(76px,10vw,140px)}
 .q .who b{color:var(--body);font-weight:500}
 
 /* ——— навыки абзацем, образование строками, «ищу» таблицей: три разных носителя ——— */
+.skills__lead{margin:14px 0 0;max-width:820px;font-size:16.5px;line-height:1.55;color:var(--meta)}
+.skills__lead b{color:var(--ink);font-weight:600}
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:38px 34px;max-width:960px;margin-top:30px}
 .skill h4{margin:0 0 10px;font-size:20px;line-height:1.25;font-weight:650;letter-spacing:-.015em;color:var(--ink)}
-.skill p{margin:0;font-size:15px;line-height:1.6;color:var(--meta)}
+.skill p{margin:0;font-size:15px;line-height:1.6;color:var(--body)}
 .skill p b{color:var(--body);font-weight:600}
 .skill--rest{grid-column:1/-1;padding-top:26px;margin-top:6px;border-top:1px solid rgba(255,255,255,.09)}
 .skill--rest h4{font-size:14px;letter-spacing:.02em;color:var(--meta);font-weight:600;margin-bottom:10px}
@@ -729,7 +731,8 @@ draw();
 
   <section id="skills">
     <h2>Навыки</h2>
-            <div class="skills">
+    <p class="skills__lead">Сильнее всего: <b>Discovery-исследования</b>, <b>ИИ-агенты</b>, <b>стратегия и цена</b>. 130+ интервью, 20+ циклов, 4 млн MAU — и продукт, собранный руками.</p>
+    <div class="skills">
       <div class="skill">
         <h4>Discovery и исследования</h4>
         <p>CustDev, JTBD/AJTBD-интервью, CJM, UX-тесты, JTBD-ТЗ, конвейер гипотез. <b>130+ интервью, 20+ циклов</b> — год в медиа-бренде на 4 млн MAU</p>
@@ -747,7 +750,7 @@ draw();
         <p><span>Аналитика: SQL, Amplitude, A/B, воронки и NSM/AARRR</span><i>·</i><span>Рост и медиа: каналы, контент, B2B-переговоры</span><i>·</i><span>Delivery: MVP 0→1, PRD, roadmap, Scrumban</span><i>·</i><span>Рынок: TAM/SAM/SOM, OSINT, бенчмарки</span><i>·</i><span>Команда: найм, OKR, 1-on-1</span><i>·</i><span>Стек: Claude Code, Codex, Figma, Notion, Jira</span></p>
       </div>
     </div>
-    <p class="skills__base" style="margin-top:18px;font-size:14px;color:var(--meta)">База: <b>130+</b> глубинных интервью · <b>20+</b> исследовательских циклов · команда до <b>11</b> человек · <b>2</b> PM наняты с нуля. Метрики по ступеням воронки — в блоке AARRR выше.</p>
+    <p class="skills__base" style="margin-top:20px;font-size:14px;color:var(--meta)">Команда до <b>11</b> человек · <b>2</b> PM наняты с нуля · метрики по ступеням воронки — в блоке AARRR выше.</p>
   </section>
 
   <section id="education" aria-label="Образование">
