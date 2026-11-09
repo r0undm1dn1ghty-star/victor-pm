@@ -167,17 +167,16 @@ section{padding-top:clamp(76px,10vw,140px)}
 .q .who b{color:var(--body);font-weight:500}
 
 /* ——— навыки абзацем, образование строками, «ищу» таблицей: три разных носителя ——— */
-.skills{display:grid;gap:10px;max-width:820px;font-size:15.5px}
-.skills b{color:var(--ink)}
-.skills span{color:var(--meta)}
-.skills__label{margin:10px 0 2px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--meta);font-weight:600}
-.skills__label:first-child{margin-top:0}
-.skills__label.core{color:var(--accent)}
-.skills p{font-size:15px;line-height:1.5;padding-left:12px;border-left:1px solid rgba(255,255,255,.12);margin:0}
-.skills .core p{font-size:16.5px;line-height:1.52;border-left:3px solid var(--accent);padding-left:14px}
-.skills .core p b{color:var(--accent);font-weight:700;font-size:16.5px}
-.skills .working p{font-size:13.5px;line-height:1.45;border-left-color:rgba(255,255,255,.07);opacity:.74}
-.skills .working p b{font-size:13.5px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:38px 34px;max-width:960px;margin-top:30px}
+.skill h4{margin:0 0 10px;font-size:20px;line-height:1.25;font-weight:650;letter-spacing:-.015em;color:var(--ink)}
+.skill p{margin:0;font-size:15px;line-height:1.6;color:var(--meta)}
+.skill p b{color:var(--body);font-weight:600}
+.skill--rest{grid-column:1/-1;padding-top:26px;margin-top:6px;border-top:1px solid rgba(255,255,255,.09)}
+.skill--rest h4{font-size:14px;letter-spacing:.02em;color:var(--meta);font-weight:600;margin-bottom:10px}
+.skill--rest p{font-size:15px;line-height:1.8}
+.skill--rest span{color:var(--body)}
+.skill--rest i{font-style:normal;color:rgba(255,255,255,.22);padding:0 8px}
+@media (max-width:820px){.skills{grid-template-columns:1fr;gap:26px}.skill h4{font-size:18px}}
 .rows{max-width:760px;border-top:1px solid var(--line-soft)}
 .row{display:grid;grid-template-columns:38px 1fr auto;gap:4px 14px;padding:16px 0;border-bottom:1px solid var(--line-soft);font-size:15.5px;align-items:center}
 .row .badge{width:38px;height:38px;max-width:38px;max-height:38px;border-radius:10px;display:grid;place-items:center;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--accent);background:rgba(123,196,168,.1);border:1px solid var(--accent-40);overflow:hidden}
@@ -1294,24 +1293,22 @@ document.querySelectorAll("[data-mapfig]").forEach(initMap);
 
   <section id="skills">
     <h2>Skills</h2>
-        <div class="skills" style="margin-top:24px">
-      <h4 class="skills__label core">Core — this is why they hire</h4>
-      <div class="core">
-        <p><b>Discovery and research.</b> <span>CustDev, JTBD/AJTBD interviews, CJM, UX tests, JTBD briefs, hypothesis pipeline. 130+ interviews, 20+ cycles — a year inside a 4M-MAU media brand</span></p>
-        <p><b>AI and agents.</b> <span>AI-agent deployment, prompt engineering, Python, FastAPI, local models, automation. Built the product myself: installer, night bot, auto-delivery</span></p>
-        <p><b>Strategy and pricing.</b> <span>product vision, business modelling, unit economics and P&amp;L, TCO, tiers and price ladder, value proposition, Service Blueprint</span></p>
+            <div class="skills">
+      <div class="skill">
+        <h4>Discovery and research</h4>
+        <p>CustDev, JTBD/AJTBD interviews, CJM, UX tests, JTBD briefs, hypothesis pipeline. <b>130+ interviews, 20+ cycles</b> — a year inside a 4M-MAU media brand</p>
       </div>
-      <h4 class="skills__label">Strong</h4>
-      <div>
-        <p><b>Analytics and metrics.</b> <span>SQL, Amplitude, A/B tests, funnels and NSM/AARRR, retention and CSAT, dashboards, ICE/RICE</span></p>
-        <p><b>Growth, media and sales.</b> <span>channels and funnels, content plans, SMM, B2B negotiation, pitches and defending strategy to C-level</span></p>
-        <p><b>Delivery.</b> <span>0→1 MVP, PRD, roadmap, backlog, sprints, Scrumban, sign-off by DoR/DoD, SOP</span></p>
+      <div class="skill">
+        <h4>AI and agents</h4>
+        <p>Agent deployment, prompt engineering, Python, FastAPI, local models. <b>Built the product myself</b>: installer, night bot, auto-delivery</p>
       </div>
-      <h4 class="skills__label">Working</h4>
-      <div class="working">
-        <p><b>Market and competition.</b> <span>TAM/SAM/SOM, competitive analysis, OSINT, benchmarks, scenario modelling</span></p>
-        <p><b>Team.</b> <span>hiring from scratch, onboarding, OKRs, 1-on-1s, performance syncs</span></p>
-        <p><b>Stack.</b> <span>Claude Code, Codex, GitHub, Figma, Miro, Notion, Jira, Confluence, Tilda, Framer, Unisender, Google Sheets</span></p>
+      <div class="skill">
+        <h4>Strategy and pricing</h4>
+        <p>Business modelling, unit economics and P&amp;L, TCO, tiers and price ladder, value proposition, Service Blueprint</p>
+      </div>
+      <div class="skill skill--rest">
+        <h4>Also in the toolkit</h4>
+        <p><span>Analytics: SQL, Amplitude, A/B, funnels and NSM/AARRR</span><i>·</i><span>Growth and media: channels, content, B2B negotiation</span><i>·</i><span>Delivery: 0→1 MVP, PRD, roadmap, Scrumban</span><i>·</i><span>Market: TAM/SAM/SOM, OSINT, benchmarks</span><i>·</i><span>Team: hiring, OKRs, 1-on-1s</span><i>·</i><span>Stack: Claude Code, Codex, Figma, Notion, Jira</span></p>
       </div>
     </div>
     <p class="skills__base" style="margin-top:18px;font-size:14px;color:var(--meta)">Base: <b>130+</b> in-depth interviews · <b>20+</b> research cycles · teams up to <b>11</b> · <b>2</b> PMs hired from scratch. Per-stage metrics live in the AARRR block above.</p>
